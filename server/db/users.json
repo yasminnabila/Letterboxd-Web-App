@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "username": "ohellard0",
+    "email": "aarmstrong0@washington.edu",
+    "password": "ZHYIVgd4oj",
+    "role": "Admin",
+    "phoneNumber": "826-860-7599",
+    "address": "9272 Graceland Place"
+  },
+  {
+    "id": 2,
+    "username": "cnovotne1",
+    "email": "vharman1@miibeian.gov.cn",
+    "password": "52NkCHC3ba",
+    "role": "Staff",
+    "phoneNumber": "448-405-1430",
+    "address": "986 Utah Way"
+  },
+  {
+    "id": 3,
+    "username": "ngatfield2",
+    "email": "iclash2@cdc.gov",
+    "password": "0WHXNdI",
+    "role": "Customer",
+    "phoneNumber": "386-901-5901",
+    "address": "3253 Oneill Parkway"
+  }
+]
