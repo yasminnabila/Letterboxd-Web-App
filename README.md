@@ -1,7 +1,7 @@
 # P3-Challenge-1
 
-- Tema Aplikasi: ...
-- CSS Framework: ...
+- Tema Aplikasi: Movie Synopsis
+- CSS Framework: Bootstrap
 
 Struktur Folder:
 
@@ -13,7 +13,7 @@ Struktur Folder:
 
 Target:
 
-- [ ] Lecture - React Intro
+- [X] Lecture - React Intro
 - [ ] React: Class Component vs Function Component
 - [ ] Mempelajari State menggunakan useState
 - [ ] Mengirim Props baik berupa sebuah state atau function
@@ -21,10 +21,10 @@ Target:
 - [ ] Conditional Rendering di dalam React
 - [ ] Looping List of Data di dalam React
 - [ ] Lifecycle component menggunakan useEffect
-- [ ] Membuat server (json-server)
+- [X] Membuat server (json-server)
 - [ ] Membuat react app untuk client-user (Styling)
 - [ ] Membuat react app untuk client-admin (CRUD)
-- [ ] Menentukan Thema Aplikasi
+- [X] Menentukan Thema Aplikasi
 - [ ] Menentukan Design dan pemilihan CSS Framework
 
 **Report:**
