@@ -1,52 +1,102 @@
 [
   {
     "id": 1,
-    "title": "Quality Street",
-    "slug": "Buried",
-    "synopsis": "Doorway to Hell, The",
-    "trailerUrl": "http://dummyimage.com/212x100.png/cc0000/ffffff",
-    "imageUrl": "http://dummyimage.com/246x100.png/dddddd/000000",
+    "title": "Top Gun: Maverick",
+    "slug": "top-gun-maverick",
+    "synopsis": "After more than thirty years of service as one of the Navy’s top aviators, and dodging the advancement in rank that would ground him, Pete “Maverick” Mitchell finds himself training a detachment of TOP GUN graduates for a specialized mission the likes of which no living pilot has ever seen. Facing an uncertain future and confronting the ghosts of his past, Maverick is drawn into a confrontation with his own deepest fears, culminating in a mission that demands the ultimate sacrifice from those who will be chosen to fly it.",
+    "trailerUrl": "https://youtu.be/giXco2jaZ_4",
+    "imageUrl": "https://lsf.go.id/wp-content/uploads/2022/04/top_gunmaverick_sensor_page-0001-350x520.jpg",
     "genreId": 1,
     "authorId": 1
   },
   {
     "id": 2,
-    "title": "In-Laws, The",
-    "slug": "Valerie and Her Week of Wonders (Valerie a týden divu)",
-    "synopsis": "Rapture, The",
-    "trailerUrl": "http://dummyimage.com/212x100.png/dddddd/000000",
-    "imageUrl": "http://dummyimage.com/215x100.png/5fa2dd/ffffff",
+    "title": "Everything Everywhere All at Once",
+    "slug": "everything-everywhere-all-at-once",
+    "synopsis": "An aging Chinese immigrant is swept up in an insane adventure, where she alone can save what’s important to her by connecting with the lives she could have led in other universes.",
+    "trailerUrl": "https://youtu.be/wxN1T1uxQ2g",
+    "imageUrl": "http://assets.kompasiana.com/items/album/2022/06/24/mv5bztzjoti3ntmtztjjms00mzqyltg1mjctyzm5zdvjyzcymwjhxkeyxkfqcgdeqxvynzyyotm1odiat-v1-62b53c40bb4486742c5bfa12.jpg",
     "genreId": 2,
-    "authorId": 2
+    "authorId": 1
   },
   {
     "id": 3,
-    "title": "Holiday Spin",
-    "slug": "My Friends (Amici miei)",
-    "synopsis": "Parting Glances",
-    "trailerUrl": "http://dummyimage.com/231x100.png/cc0000/ffffff",
-    "imageUrl": "http://dummyimage.com/186x100.png/dddddd/000000",
+    "title": "5 Centimeters per Second",
+    "slug": "5-centimeters-per-second",
+    "synopsis": "Three moments in Takaki’s life: his relationship with Akari and their forced separation; his friendship with Kanae, who is secretly in love with him; the demands and disappointments of adulthood, an unhappy life in a cold city.",
+    "trailerUrl": "https://youtu.be/ANiNAqkuWMY",
+    "imageUrl": "https://cdn.myanimelist.net/images/about_me/ranking_items/9813430-ed832ec8-f93a-40c8-a52a-958abf4b9d80.jpg?t=1655725854",
     "genreId": 3,
-    "authorId": 3
+    "authorId": 1
   },
   {
     "id": 4,
-    "title": "Camp",
-    "slug": "Iran Job, The",
-    "synopsis": "Man on a Ledge",
-    "trailerUrl": "http://dummyimage.com/241x100.png/ff4444/ffffff",
-    "imageUrl": "http://dummyimage.com/222x100.png/cc0000/ffffff",
+    "title": "10 Things I Hate About You",
+    "slug": "10-things-i-hate-about-you",
+    "synopsis": "On the first day at his new school, Cameron instantly falls for Bianca, the gorgeous girl of his dreams. The only problem is that Bianca is forbidden to date until her ill-tempered, completely un-dateable older sister Kat goes out, too. In an attempt to solve his problem, Cameron singles out the only guy who could possibly be a match for Kat: a mysterious bad boy with a nasty reputation of his own.",
+    "trailerUrl": "https://youtu.be/Ax8qnxP2TWY",
+    "imageUrl": "https://flxt.tmsimg.com/assets/p22802_p_v11_an.jpg",
     "genreId": 4,
-    "authorId": 4
+    "authorId": 1
   },
   {
     "id": 5,
-    "title": "Sessions, The (Surrogate, The)",
-    "slug": "You Killed Me First",
-    "synopsis": "Auntie from Chicago, The (I theia apo to Chicago)",
-    "trailerUrl": "http://dummyimage.com/147x100.png/5fa2dd/ffffff",
-    "imageUrl": "http://dummyimage.com/201x100.png/ff4444/ffffff",
+    "title": "Pulp Fiction",
+    "slug": "pulp-fiction",
+    "synopsis": "A burger-loving hit man, his philosophical partner, a drug-addled gangster’s moll and a washed-up boxer converge in this sprawling, comedic crime caper. Their adventures unfurl in three stories that ingeniously trip back and forth in time.",
+    "trailerUrl": "https://youtu.be/tGpTpVyI_OQ",
+    "imageUrl": "https://static.miraheze.org/greatestmovieswiki/thumb/9/93/Pulp_Fiction.jpg/660px-Pulp_Fiction.jpg",
     "genreId": 5,
-    "authorId": 5
+    "authorId": 1
+  },
+  {
+    "id": 6,
+    "title": "Fyre",
+    "slug": "fyre",
+    "synopsis": "He promised supermodels and yachts, but delivered tents and cheese sandwiches. How one man engineered a music festival disaster.",
+    "trailerUrl": "https://youtu.be/uZ0KNVU2fV0",
+    "imageUrl": "https://fictionmachine.files.wordpress.com/2019/01/fyre_poster-e1548031510619.jpg",
+    "genreId": 6,
+    "authorId": 1
+  },
+  {
+    "id": 7,
+    "title": "Parasite",
+    "slug": "parasite",
+    "synopsis": "All unemployed, Ki-taek’s family takes peculiar interest in the wealthy and glamorous Parks for their livelihood until they get entangled in an unexpected incident.",
+    "trailerUrl": "https://youtu.be/tBfgTZsBeFM",
+    "imageUrl": "https://i0.wp.com/cedars.cedarville.edu/wp/wp-content/uploads/2020/05/Parasite-scaled.jpg",
+    "genreId": 7,
+    "authorId": 1
+  },
+  {
+    "id": 8,
+    "title": "Turning Red",
+    "slug": "turning-red",
+    "synopsis": "Thirteen-year-old Mei is experiencing the awkwardness of being a teenager with a twist – when she gets too excited, she transforms into a giant red panda.",
+    "trailerUrl": "https://youtu.be/XdKzUbAiswE",
+    "imageUrl": "https://lumiere-a.akamaihd.net/v1/images/turning-red-dplus-poster-hotstar-id_6e493d5c.jpeg",
+    "genreId": 8,
+    "authorId": 1
+  },
+  {
+    "id": 9,
+    "title": "The Witch",
+    "slug": "the-witch",
+    "synopsis": "In 1630s New England, William and Katherine lead a devout Christian life with five children, homesteading on the edge of an impassable wilderness, exiled from their settlement when William defies the local church. When their newborn son vanishes and crops mysteriously fail, the family turns on one another.",
+    "trailerUrl": "https://youtu.be/Bo2OTEbz-jU",
+    "imageUrl": "https://4.bp.blogspot.com/-5BwAal8ZTwM/Vz1VnHSFv_I/AAAAAAABYrQ/Nnkl_p7TjhcSjec8lRW-UvDytcg7ZpVpgCLcB/s1600/David-Moscati-The-Witch-Movie-Poster-2016-Hero-Complex-Gallery.jpg",
+    "genreId": 9,
+    "authorId": 1
+  },
+  {
+    "id": 10,
+    "title": "1917",
+    "slug": "1917",
+    "synopsis": "At the height of the First World War, two young British soldiers must cross enemy territory and deliver a message that will stop a deadly attack on hundreds of soldiers.",
+    "trailerUrl": "https://youtu.be/gZjQROMAh_s",
+    "imageUrl": "https://movieden.net/wp-content/uploads/2020/01/poster-1917.jpg",
+    "genreId": 10,
+    "authorId": 1
   }
 ]

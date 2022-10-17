@@ -1,29 +1,29 @@
 [
   {
     "id": 1,
-    "username": "ohellard0",
-    "email": "aarmstrong0@washington.edu",
-    "password": "ZHYIVgd4oj",
+    "username": "yasmin",
+    "email": "yasmin@outlook.com",
+    "password": "12345",
     "role": "Admin",
     "phoneNumber": "826-860-7599",
-    "address": "9272 Graceland Place"
+    "address": "Jakarta"
   },
   {
     "id": 2,
-    "username": "cnovotne1",
-    "email": "vharman1@miibeian.gov.cn",
-    "password": "52NkCHC3ba",
+    "username": "alul",
+    "email": "alul@outlook.com",
+    "password": "12345",
     "role": "Staff",
     "phoneNumber": "448-405-1430",
-    "address": "986 Utah Way"
+    "address": "Depok"
   },
   {
     "id": 3,
-    "username": "ngatfield2",
-    "email": "iclash2@cdc.gov",
-    "password": "0WHXNdI",
+    "username": "lany",
+    "email": "lany@outlook.com",
+    "password": "12345",
     "role": "Customer",
     "phoneNumber": "386-901-5901",
-    "address": "3253 Oneill Parkway"
+    "address": "Jakarta"
   }
 ]
