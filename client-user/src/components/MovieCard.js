@@ -7,7 +7,11 @@ function MovieCard({ movie }) {
         className="justify-content-center"
         style={{ width: "16rem", height: "34rem" }}
       >
-        <Card.Img variant="top" src={movie.imageUrl} />
+        <Card.Img
+          className="align-items-center justify-content-center"
+          variant="top"
+          src={movie.imageUrl}
+        />
         <Card.Body className="align-items-center">
           <Card.Title className="mb-2 text-dark">{movie.title}</Card.Title>
           <Card.Title className="mb-2 text-muted">
