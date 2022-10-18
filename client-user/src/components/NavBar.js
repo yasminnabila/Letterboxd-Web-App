@@ -1,16 +1,13 @@
-import { Container, Nav, Navbar, Row } from "react-bootstrap";
+import { Container, Nav, Navbar } from "react-bootstrap";
 
 function BasicExample() {
   return (
     <Navbar bg="dark" expand="lg">
-      <Container>
-        <Navbar.Brand
-          href="#home"
-          className="d-inline-flex justify-content-start"
-        >
+      <Container className="d-flex justify-content-between">
+        <Navbar.Brand href="#home">
           <img
             src={process.env.PUBLIC_URL + "/assets/letterboxd-logo-dark.png"}
-            width="250"
+            width="200"
             height="auto"
             className="d-flex-inline-block align-top"
             alt="Letterboxd logo"
@@ -19,25 +16,19 @@ function BasicExample() {
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
           <Nav>
-            <Nav.Link className="nav-list-link text-white small" href="#home">
+            <Nav.Link className="nav-list-link text-white small" href="#login">
               SIGN IN
             </Nav.Link>
             <Nav.Link
               className="nav-list-link text-white small"
-              href="#features"
+              href="#register"
             >
               CREATE ACCOUNT
             </Nav.Link>
-            <Nav.Link
-              className="nav-list-link text-white small"
-              href="#pricing"
-            >
+            <Nav.Link className="nav-list-link text-white small" href="#films">
               FILMS
             </Nav.Link>
-            <Nav.Link
-              className="nav-list-link text-white small"
-              href="#pricing"
-            >
+            <Nav.Link className="nav-list-link text-white small" href="#lists">
               LISTS
             </Nav.Link>
           </Nav>
