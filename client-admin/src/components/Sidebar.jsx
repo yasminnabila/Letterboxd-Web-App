@@ -1,3 +1,5 @@
+import { Nav } from "react-bootstrap";
+
 export default function Sidebar() {
   return (
     <div className="container-fluid">
@@ -9,44 +11,24 @@ export default function Sidebar() {
           <div className="position-sticky pt-3 sidebar-sticky">
             <ul className="nav flex-column">
               <li className="nav-item">
-                <a
-                  className="nav-link text-white small"
-                  aria-current="page"
-                  href="#"
-                >
-                  <span
-                    data-feather="home"
-                    className="nav-list-link text-white small"
-                  ></span>
+                <Nav.Link className="nav-link text-white small" href="#login">
                   Dashboard
-                </a>
+                </Nav.Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-white small" href="#">
-                  <span
-                    data-feather="file"
-                    className="align-text-bottom"
-                  ></span>
-                  Genres
-                </a>
+                <Nav.Link className="nav-link text-white small" href="#login">
+                  Categories
+                </Nav.Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-white small" href="#">
-                  <span
-                    data-feather="shopping-cart"
-                    className="align-text-bottom"
-                  ></span>
+                <Nav.Link className="nav-link text-white small" href="#login">
                   Register Admin
-                </a>
+                </Nav.Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-white small" href="#">
-                  <span
-                    data-feather="users"
-                    className="align-text-bottom"
-                  ></span>
+                <Nav.Link className="nav-link text-white small" href="#login">
                   Sign Out
-                </a>
+                </Nav.Link>
               </li>
             </ul>
           </div>
