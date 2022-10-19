@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function NavBar() {
   return (
-    <Navbar bg="dark" expand="lg" style={{ height: 50 }}>
+    <Navbar bg="dark" expand="lg" style={{ height: 70 }}>
       <Container className="d-flex justify-content-between">
         <Navbar.Brand href="#home">
           <img
