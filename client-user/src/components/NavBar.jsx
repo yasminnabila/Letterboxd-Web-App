@@ -7,7 +7,7 @@ function BasicExample() {
         <Navbar.Brand href="#home">
           <img
             src={process.env.PUBLIC_URL + "/assets/letterboxd-logo-dark.png"}
-            width="250"
+            width="200"
             height="auto"
             className="d-flex-inline-block align-top"
             alt="Letterboxd logo"

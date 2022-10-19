@@ -1,6 +1,6 @@
-import { Card, Container, Col } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { Col, Card, Container, Row } from "react-bootstrap";
 
 function MovieDetail() {
   let { id } = useParams();
@@ -10,13 +10,13 @@ function MovieDetail() {
 
   //? EFFECT ONLY WHEN RENDERED
   useEffect(() => {
-    fetchMovieById();
+    fetchMovie();
   }, []);
 
-  async function fetchMovieById() {
+  async function fetchMovie() {
     setLoading(true);
     try {
-      const response = await fetch(`http://localhost:4000/movies` + id);
+      const response = await fetch("http://localhost:4000/movies/" + id);
       if (!response.ok) {
         throw new Error("Oops! There's something wrong...");
       }
@@ -44,29 +44,39 @@ function MovieDetail() {
 
   return (
     <>
-      <Container fluid className="d-flex justify-content-center">
+      <Container className="container-fluid">
+        <Container className="mt-3 mb-3" />
         <Col className="mt-5" key={movie.id}>
           <Card
             className="justify-content-center h-100"
-            style={{ width: "10rem", backgroundColor: "#546e7a" }}
+            style={{ backgroundColor: "#546e7a" }}
           >
-            <Card.Img
-              className="d-flex align-items-center justify-content-center hover-zoom"
-              variant="top"
-              style={{ height: 230 }}
-              src={movie.imageUrl}
-            />
+            <Row>
+              <Col className="col-7">
+                <div>
+                  <Card.Img
+                    className="d-flex align-items-center justify-content-center hover-zoom"
+                    variant="top"
+                    style={{ width: "25rem" }}
+                    src={movie.imageUrl}
+                  />
+                </div>
+              </Col>
 
-            <Card.Body className="text-sm-center align-items-center d-flex justify-content-center flex-column">
-              <Card.Title className="font-weight-light mb-0 align-items-center d-flex justify-content-center ">
-                {movie.title}
-              </Card.Title>
-              <Card.Title className="font-weight-light mb-0 align-items-center d-flex justify-content-center ">
-                Rating: {movie.rating}
-              </Card.Title>
-            </Card.Body>
+              <Col className="col-5">
+                <Card.Body className="text-sm-center align-items-center d-flex justify-content-center flex-column">
+                  <Card.Title className="font-weight-light mb-0 align-items-center d-flex justify-content-center ">
+                    {movie.title}
+                  </Card.Title>
+                  <Card.Title className="font-weight-light mb-0 align-items-center d-flex justify-content-center ">
+                    Rating: {movie.rating}
+                  </Card.Title>
+                </Card.Body>
+              </Col>
+            </Row>
           </Card>
         </Col>
+        <Container />
       </Container>
     </>
   );

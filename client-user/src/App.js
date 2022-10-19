@@ -1,9 +1,11 @@
-import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import React from "react";
 import Layout from "./pages/Layout";
 import Home from "./pages/Home";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import MovieList from "./pages/MovieList";
+import MovieDetail from "./pages/MovieDetail";
 
 function App() {
   const router = createBrowserRouter([
@@ -16,11 +18,11 @@ function App() {
         },
         {
           path: "/movies",
-          element: "MovieList",
+          element: <MovieList />,
         },
         {
           path: "/movies/:id",
-          element: "MovieDetail",
+          element: <MovieDetail />,
         },
       ],
     },
