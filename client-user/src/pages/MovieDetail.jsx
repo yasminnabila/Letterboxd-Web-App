@@ -79,9 +79,9 @@ function MovieDetail() {
                     <h1>{movie.title}</h1>
                   </Card.Title>
                   <Card.Title className="mb-5 font-weight-light mb-0 align-items-center d-flex justify-content-center ">
-                    Rating: {movie.rating}
+                    <h6>Rating: {movie.rating}</h6>
                   </Card.Title>
-                  <Card.Title className="mb-5 font-weight-light mb-0 align-items-center d-flex justify-content-center ">
+                  <Card.Title className="mt-5 font-weight-light mb-0 align-items-center d-flex justify-content-center ">
                     <h5>{movie.synopsis}</h5>
                   </Card.Title>
                 </Card.Body>
