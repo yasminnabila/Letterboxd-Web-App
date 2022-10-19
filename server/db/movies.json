@@ -89,12 +89,12 @@
   },
   {
     "id": 9,
-    "title": "The Witch",
-    "slug": "the-witch",
-    "synopsis": "In 1630s New England, William and Katherine lead a devout Christian life with five children, homesteading on the edge of an impassable wilderness, exiled from their settlement when William defies the local church. When their newborn son vanishes and crops mysteriously fail, the family turns on one another.",
-    "trailerUrl": "https://youtu.be/Bo2OTEbz-jU",
-    "imageUrl": "https://4.bp.blogspot.com/-5BwAal8ZTwM/Vz1VnHSFv_I/AAAAAAABYrQ/Nnkl_p7TjhcSjec8lRW-UvDytcg7ZpVpgCLcB/s1600/David-Moscati-The-Witch-Movie-Poster-2016-Hero-Complex-Gallery.jpg",
-    "rating": 3.9,
+    "title": "Last Night in Soho",
+    "slug": "last-night-in-soho",
+    "synopsis": "A young girl, passionate about fashion design, is mysteriously able to enter the 1960s where she encounters her idol, a dazzling wannabe singer. But 1960s London is not what it seems, and time seems to be falling apart with shady consequences.",
+    "trailerUrl": "https://youtu.be/XgNrL4Kf7yU",
+    "imageUrl": "https://media-cache.cinematerial.com/p/500x/zmyrwuey/last-night-in-soho-movie-poster.jpg?v=1631826157",
+    "rating": 3.5,
     "genreId": 9,
     "authorId": 1
   },
@@ -107,6 +107,28 @@
     "imageUrl": "https://media-cache.cinematerial.com/p/500x/4rhbzbmy/1917-british-movie-poster.jpg?v=1570440224",
     "rating": 4.1,
     "genreId": 10,
+    "authorId": 1
+  },
+  {
+    "id": 11,
+    "title": "Suspiria",
+    "slug": "suspiria",
+    "synopsis": "From the moment she arrives in Freiberg, Germany, to attend the prestigious Tanz Academy, American ballet-dancer Suzy Bannion senses that something horribly evil lurks within the walls of the age-old institution.",
+    "trailerUrl": "https://youtu.be/x_FfT98QJks",
+    "imageUrl": "https://media-cache.cinematerial.com/p/500x/mzat1pqy/suspiria-movie-poster.jpg?v=1456555809",
+    "rating": 4.0,
+    "genreId": 11,
+    "authorId": 1
+  },
+  {
+    "id": 12,
+    "title": "Whiplash",
+    "slug": "whiplash",
+    "synopsis": "Under the direction of a ruthless instructor, a talented young drummer begins to pursue perfection at any cost, even his humanity.",
+    "trailerUrl": "https://youtu.be/Df1xkYYbYrY",
+    "imageUrl": "https://media-cache.cinematerial.com/p/500x/xveiw3g3/whiplash-movie-poster.jpg?v=1456046076",
+    "rating": 4.4,
+    "genreId": 12,
     "authorId": 1
   }
 ]

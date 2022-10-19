@@ -2,7 +2,7 @@ import Carousel from "react-bootstrap/Carousel";
 
 function CarouselFade() {
   return (
-    <Carousel fade>
+    <Carousel fade className="m-0">
       <Carousel.Item>
         <img
           className="d-block w-100"
@@ -11,8 +11,9 @@ function CarouselFade() {
           alt="First slide"
         />
         <Carousel.Caption>
-          <h3>Blade Runner 2049 (2017)</h3>
-          <p>dir. Denis Villeneuve</p>
+          <h1>Track films you've watched.</h1>
+          <h1>Save those you want to see.</h1>
+          <h1>Tell your friends what's good.</h1>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -23,20 +24,22 @@ function CarouselFade() {
         />
 
         <Carousel.Caption>
-          <h3>IT (2019)</h3>
-          <p>dir. Andy Muschietti</p>
+          <h1>Track films you've watched.</h1>
+          <h1>Save those you want to see.</h1>
+          <h1>Tell your friends what's good.</h1>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src={process.env.PUBLIC_URL + "/assets/Space_Oddysey.png"}
+          src={process.env.PUBLIC_URL + "/assets/Space_Oddysey_2.png"}
           alt="Third slide"
         />
 
         <Carousel.Caption>
-          <h3>2001: A Space Odyssey (1968)</h3>
-          <p>dir. Stanley Kubrick</p>
+          <h1>Track films you've watched.</h1>
+          <h1>Save those you want to see.</h1>
+          <h1>Tell your friends what's good.</h1>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>

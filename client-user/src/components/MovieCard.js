@@ -4,20 +4,24 @@ function MovieCard({ movie }) {
   return (
     <Col className="mt-5" key={movie.id}>
       <Card
-        className="justify-content-center"
-        style={{ width: "16rem", height: "34rem" }}
+        className="justify-content-center h-100"
+        style={{ width: "10rem", backgroundColor: "#546e7a" }}
       >
         <Card.Img
-          className="align-items-center justify-content-center"
+          className="d-flex align-items-center justify-content-center hover-zoom"
           variant="top"
+          style={{ height: 230 }}
           src={movie.imageUrl}
         />
-        <Card.Body className="align-items-center">
-          <Card.Title className="mb-2 text-dark">{movie.title}</Card.Title>
-          <Card.Title className="mb-2 text-muted">
-            Rating: {movie.rating}
+
+        <Card.Body className="text-sm-center align-items-center d-flex justify-content-center flex-column">
+          {/* <Card.Title className="font-weight-light mb-0 align-items-center d-flex justify-content-center ">
+            {movie.title}
           </Card.Title>
-          <Button variant="dark">Detail</Button>
+          <Card.Title className="font-weight-light mb-0 align-items-center d-flex justify-content-center ">
+            Rating: {movie.rating}
+          </Card.Title> */}
+          {/* <Button variant="dark">Detail</Button> */}
         </Card.Body>
       </Card>
     </Col>

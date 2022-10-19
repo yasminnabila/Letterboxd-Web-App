@@ -5,6 +5,8 @@ import MovieCard from "../components/MovieCard";
 
 function MovieList() {
   const [movie, setMovie] = useState([]);
+  const [loading, setLoading] = useState(true);
+  let [error, setError] = useState("");
 
   //? EFFECT ONLY WHEN RENDERED
   useEffect(() => {
@@ -17,6 +19,9 @@ function MovieList() {
   return (
     <Container>
       <Row>
+        <Row className="mt-5 mb-7 text-center text-muted">
+          <h2>POPULAR FILMS THIS WEEK</h2>
+        </Row>
         {movie.map((el, index) => {
           return <MovieCard movie={el} />;
         })}

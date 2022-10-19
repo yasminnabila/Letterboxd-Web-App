@@ -42,7 +42,7 @@
     },
     {
       "id": 2,
-      "title": "Everything Everywhere All at Once",
+      "title": "Everything Everywhere All At Once",
       "slug": "everything-everywhere-all-at-once",
       "synopsis": "An aging Chinese immigrant is swept up in an insane adventure, where she alone can save what’s important to her by connecting with the lives she could have led in other universes.",
       "trailerUrl": "https://youtu.be/wxN1T1uxQ2g",
@@ -101,7 +101,7 @@
       "slug": "parasite",
       "synopsis": "All unemployed, Ki-taek’s family takes peculiar interest in the wealthy and glamorous Parks for their livelihood until they get entangled in an unexpected incident.",
       "trailerUrl": "https://youtu.be/tBfgTZsBeFM",
-      "imageUrl": "https://media-cache.cinematerial.com/p/500x/zjfkr4ca/parasite-movie-poster.jpg?v=1565848483",
+      "imageUrl": "https://media-cache.cinematerial.com/p/500x/bqeru2ln/parasite-german-movie-cover.jpg?v=1566751935",
       "rating": 4.6,
       "genreId": 7,
       "authorId": 1
@@ -145,7 +145,7 @@
       "slug": "suspiria",
       "synopsis": "From the moment she arrives in Freiberg, Germany, to attend the prestigious Tanz Academy, American ballet-dancer Suzy Bannion senses that something horribly evil lurks within the walls of the age-old institution.",
       "trailerUrl": "https://youtu.be/x_FfT98QJks",
-      "imageUrl": "https://media-cache.cinematerial.com/p/500x/mzat1pqy/suspiria-movie-poster.jpg?v=1456555809",
+      "imageUrl": "https://media-cache.cinematerial.com/p/500x/hzhyfztx/suspiria-swedish-movie-poster.jpg?v=1499626473",
       "rating": 4.0,
       "genreId": 11,
       "authorId": 1
@@ -183,5 +183,80 @@
     { "id": 17, "name": "TV Movie" },
     { "id": 18, "name": "War" },
     { "id": 19, "name": "Western" }
+  ],
+
+  "casts": [
+    {
+      "id": 1,
+      "movieId": 1,
+      "name": "Miles Teller",
+      "profilePict": "https://image.tmdb.org/t/p/w342/cg3LW0xX6RKr8dmescxq1bepcb5.jpg"
+    },
+    {
+      "id": 2,
+      "movieId": 2,
+      "name": "Michelle Yeoh",
+      "profilePict": "https://image.tmdb.org/t/p/w342/wPI2wn6WJEtJr1oAMTLBLh92Ryc.jpg"
+    },
+    {
+      "id": 3,
+      "movieId": 3,
+      "name": "Kenji Mizuhashi",
+      "profilePict": "https://image.tmdb.org/t/p/w342/2ydE4b4j3gFmx7kPPrGOuVyM4DX.jpg"
+    },
+    {
+      "id": 4,
+      "movieId": 4,
+      "name": "Joseph Gordon-Levitt",
+      "profilePict": "https://image.tmdb.org/t/p/w342/dhv9f3AaozOjpvjAwVzOWlmmT2V.jpg"
+    },
+    {
+      "id": 5,
+      "movieId": 5,
+      "name": "Uma Thurman",
+      "profilePict": "https://image.tmdb.org/t/p/w342/tHa7u4ScCm9hwSbwodzj8Jmy3io.jpg"
+    },
+    {
+      "id": 6,
+      "movieId": 6,
+      "name": "Ja Rule",
+      "profilePict": "https://image.tmdb.org/t/p/w342/jiYEwuTCkp0vW14eHLFDRJ9v111.jpg"
+    },
+    {
+      "id": 7,
+      "movieId": 7,
+      "name": "Park So-dam",
+      "profilePict": "https://image.tmdb.org/t/p/w342/gaDnEiMD5PClT9ARg1bSFyexbor.jpg"
+    },
+    {
+      "id": 8,
+      "movieId": 8,
+      "name": "Maitreyi Ramakrishnan",
+      "profilePict": "https://image.tmdb.org/t/p/w342/jBFqjwvngaz6ZXEhNd6dMeZ0W6c.jpg"
+    },
+    {
+      "id": 9,
+      "movieId": 9,
+      "name": "Thomasin McKenzie",
+      "profilePict": "https://image.tmdb.org/t/p/w342/WOpnEFG5Q8LWxP81MtUrskmVox.jpg"
+    },
+    {
+      "id": 10,
+      "movieId": 10,
+      "name": "Andrew Scott",
+      "profilePict": "https://image.tmdb.org/t/p/w342/akbGBP3RI4siNLPr8Pa6YcD2NJt.jpg"
+    },
+    {
+      "id": 11,
+      "movieId": 11,
+      "name": "Jessica Harper",
+      "profilePict": "https://image.tmdb.org/t/p/w342/sSTbKuf4bY83cSRx9lmVdGobcsg.jpg"
+    },
+    {
+      "id": 12,
+      "movieId": 12,
+      "name": "J.K. Simmons",
+      "profilePict": "https://image.tmdb.org/t/p/w342/7kIiPojgSVNRXb5z0hiijcD5LJ6.jpg"
+    }
   ]
 }

@@ -1,8 +1,8 @@
-import { Container, Nav, Navbar } from "react-bootstrap";
+import { Container, Nav, Navbar, Form } from "react-bootstrap";
 
 function BasicExample() {
   return (
-    <Navbar bg="dark" expand="lg">
+    <Navbar bg="dark" expand="lg" style={{ height: 50 }}>
       <Container className="d-flex justify-content-between">
         <Navbar.Brand href="#home">
           <img
@@ -15,7 +15,7 @@ function BasicExample() {
         </Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
-          <Nav>
+          <Nav className="justify-content-center">
             <Nav.Link className="nav-list-link text-white small" href="#login">
               SIGN IN
             </Nav.Link>
