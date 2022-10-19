@@ -39,7 +39,7 @@ Target:
 Target:
 
 - [x] Lecture - Custom Hooks
-- [ ] Rules of Hooks
+- [X] Rules of Hooks
 - [x] Lecture - React-Router
 - [x] Membuat router user-side (min: home, detail)
 - [ ] Membuat router admin-side (min: login, add admin, CRUD main entitas, CRUD another entitas)
