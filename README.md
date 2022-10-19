@@ -13,19 +13,19 @@ Struktur Folder:
 
 Target:
 
-- [X] Lecture - React Intro
-- [X] React: Class Component vs Function Component
-- [X] Mempelajari State menggunakan useState
-- [X] Mengirim Props baik berupa sebuah state atau function
-- [ ] Event Handling (onClick, onChange, onSubmit)
-- [X] Conditional Rendering di dalam React
-- [X] Looping List of Data di dalam React
-- [X] Lifecycle component menggunakan useEffect
-- [X] Membuat server (json-server)
-- [X] Membuat react app untuk client-user (Styling)
+- [x] Lecture - React Intro
+- [x] React: Class Component vs Function Component
+- [x] Mempelajari State menggunakan useState
+- [x] Mengirim Props baik berupa sebuah state atau function
+- [x] Event Handling (onClick, onChange, onSubmit)
+- [x] Conditional Rendering di dalam React
+- [x] Looping List of Data di dalam React
+- [x] Lifecycle component menggunakan useEffect
+- [x] Membuat server (json-server)
+- [x] Membuat react app untuk client-user (Styling)
 - [ ] Membuat react app untuk client-admin (CRUD)
-- [X] Menentukan Thema Aplikasi
-- [X] Menentukan Design dan pemilihan CSS Framework
+- [x] Menentukan Thema Aplikasi
+- [x] Menentukan Design dan pemilihan CSS Framework
 
 **Report:**
 
@@ -38,10 +38,10 @@ Target:
 
 Target:
 
-- [ ] Lecture - Custom Hooks
+- [x] Lecture - Custom Hooks
 - [ ] Rules of Hooks
-- [ ] Lecture - React-Router
-- [ ] Membuat router user-side (min: home, detail)
+- [x] Lecture - React-Router
+- [x] Membuat router user-side (min: home, detail)
 - [ ] Membuat router admin-side (min: login, add admin, CRUD main entitas, CRUD another entitas)
 - [ ] Membuat privateRoute untuk admin
 
@@ -53,7 +53,7 @@ Target:
 
 Target:
 
-- [ ] Lecture - Redux
+- [x] Lecture - Redux
 - [ ] State vs Global State
 - [ ] Bagaimana cara membuat Store
 - [ ] Bagaimana cara membuat Reducer
