@@ -1,4 +1,4 @@
-import { Container, Nav, Navbar, Form } from "react-bootstrap";
+import { Container, Nav, Navbar } from "react-bootstrap";
 
 function BasicExample() {
   return (
@@ -7,7 +7,7 @@ function BasicExample() {
         <Navbar.Brand href="#home">
           <img
             src={process.env.PUBLIC_URL + "/assets/letterboxd-logo-dark.png"}
-            width="200"
+            width="250"
             height="auto"
             className="d-flex-inline-block align-top"
             alt="Letterboxd logo"
@@ -27,9 +27,6 @@ function BasicExample() {
             </Nav.Link>
             <Nav.Link className="nav-list-link text-white small" href="#films">
               FILMS
-            </Nav.Link>
-            <Nav.Link className="nav-list-link text-white small" href="#lists">
-              LISTS
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

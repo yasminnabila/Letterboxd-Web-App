@@ -1,16 +1,33 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
-import NavBar from "./components/NavBar";
-import MovieList from "./pages/MovieList";
-import CarouselFade from "./components/Carousel";
+import Layout from "./pages/Layout";
+import Home from "./pages/Home";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 function App() {
+  const router = createBrowserRouter([
+    {
+      element: <Layout />,
+      children: [
+        {
+          path: "/",
+          element: <Home />,
+        },
+        {
+          path: "/movies",
+          element: "MovieList",
+        },
+        {
+          path: "/movies/:id",
+          element: "MovieDetail",
+        },
+      ],
+    },
+  ]);
   return (
-    <div>
-      <NavBar />
-      <CarouselFade />
-      <MovieList />
+    <div className="App">
+      <RouterProvider router={router} />
     </div>
   );
 }
