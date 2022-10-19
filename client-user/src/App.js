@@ -1,7 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import React from "react";
 import Layout from "./pages/Layout";
 import Home from "./pages/Home";
 import MovieList from "./pages/MovieList";
