@@ -31,15 +31,13 @@ function MovieList() {
   if (loading) {
     return (
       <h1 className="text-center justify-content-center align-items-center">
-        {" "}
-        Please wait, page is loading...{" "}
+        Please wait, page is loading...
       </h1>
     );
   } else if (error) {
     return (
       <h1 className="text-center justify-content-center align-items-center">
-        {" "}
-        Sorry, page cannot be loaded{" "}
+        Sorry, page cannot be loaded
       </h1>
     );
   }

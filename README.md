@@ -18,11 +18,11 @@ Target:
 - [X] Mempelajari State menggunakan useState
 - [X] Mengirim Props baik berupa sebuah state atau function
 - [ ] Event Handling (onClick, onChange, onSubmit)
-- [ ] Conditional Rendering di dalam React
-- [ ] Looping List of Data di dalam React
+- [X] Conditional Rendering di dalam React
+- [X] Looping List of Data di dalam React
 - [X] Lifecycle component menggunakan useEffect
 - [X] Membuat server (json-server)
-- [ ] Membuat react app untuk client-user (Styling)
+- [X] Membuat react app untuk client-user (Styling)
 - [ ] Membuat react app untuk client-admin (CRUD)
 - [X] Menentukan Thema Aplikasi
 - [X] Menentukan Design dan pemilihan CSS Framework
