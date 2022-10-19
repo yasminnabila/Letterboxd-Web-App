@@ -3,7 +3,6 @@ body {
   color: #ffffff;
 }
 
-/* .movie-app > .row {
-  overflow-x: auto;
-  flex-wrap: nowrap;
-} */
+.container-movie-detail {
+  min-height: 100vh;
+}
