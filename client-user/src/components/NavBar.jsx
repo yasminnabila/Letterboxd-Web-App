@@ -1,6 +1,7 @@
 import { Container, Nav, Navbar } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
-function BasicExample() {
+function NavBar() {
   return (
     <Navbar bg="dark" expand="lg" style={{ height: 50 }}>
       <Container className="d-flex justify-content-between">
@@ -14,7 +15,7 @@ function BasicExample() {
           />
         </Navbar.Brand>
         <Navbar.Toggle />
-        <Navbar.Collapse className="justify-content-end">
+        <Navbar.Collapse className="justify-content-end align-items-center">
           <Nav className="justify-content-center">
             <Nav.Link className="nav-list-link text-white small" href="#login">
               SIGN IN
@@ -25,8 +26,23 @@ function BasicExample() {
             >
               CREATE ACCOUNT
             </Nav.Link>
-            <Nav.Link className="nav-list-link text-white small" href="#films">
+            <Link to="/movies" className="nav-link text-white" href="#films">
               FILMS
+            </Link>
+            <Nav.Link className="nav-list-link text-white small" href="#lists">
+              LISTS
+            </Nav.Link>
+            <Nav.Link
+              className="nav-list-link text-white small"
+              href="#members"
+            >
+              MEMBERS
+            </Nav.Link>
+            <Nav.Link
+              className="nav-list-link text-white small"
+              href="#journal"
+            >
+              JOURNAL
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
@@ -35,4 +51,4 @@ function BasicExample() {
   );
 }
 
-export default BasicExample;
+export default NavBar;
