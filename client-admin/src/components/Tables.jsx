@@ -1,6 +1,7 @@
 import useFetch from "../hooks/useFetch";
 import RowsMovie from "../components/RowsMovie";
 import RowsGenre from "../components/RowsGenre";
+import { Table } from "react-bootstrap";
 
 export default function Tables(props) {
   const { status, head } = props;
@@ -26,14 +27,14 @@ export default function Tables(props) {
   }
 
   return (
-    <div className="overflow-x-auto w-full p-20">
+    <div>
       <br />
-      <table width="100%" className="table w-full">
+      <Table bordered hover width="100%" className="table w-full">
         <thead>
           <tr>{tHead}</tr>
         </thead>
         <tbody className="max-w-xs">{tBody}</tbody>
-      </table>
+      </Table>
     </div>
   );
 }

@@ -18,7 +18,7 @@ export default function RowsGenre(props) {
         <i className="fas fa-arrow-up text-blue-500 mr-4">{updatedAt}</i>
       </td>
       <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-        <button className="text-red">Delete</button>
+        <button className="btn btn-dark">Delete</button>
       </td>
     </tr>
   );

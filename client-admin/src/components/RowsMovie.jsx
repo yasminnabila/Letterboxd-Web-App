@@ -21,18 +21,16 @@ export default function RowsMovie(props) {
         <i className="fas fa-arrow-up text-blue-500 mr-4">{author.email}</i>
       </td>
       <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-        <div className="items-center w-40 rounded">
+        <div className="mask mask-squircle w-20 h-20">
           <img src={imageUrl} alt={title} style={{ height: "8rem" }} />
         </div>
       </td>
       <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-        <button className="bg-emerald-500 h-8 w-24 rounded text-yellow-50 font-bold">
-          Show images
-        </button>
+        <button className="btn btn-dark">Show Casts</button>
       </td>
       <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-        <button className="text-blue-600">Edit</button>
-        <button className="text-red ml-2">Delete</button>
+        <button className="btn btn-dark">Edit</button>
+        <button className="btn btn-dark">Delete</button>
       </td>
     </tr>
   );
