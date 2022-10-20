@@ -2,25 +2,21 @@ import { Button, Form, Row, Col, Container } from "react-bootstrap";
 
 function Register() {
   return (
-    <Container
-      fluid
-      className="d-flex justify-content-center"
-      style={{ minHeight: "100vh", backgroundColor: "light" }}
-      id="login-section"
-    >
-      <Container
-        className="container h-50 d-flex justify-content-start"
-        style={{ transform: "scale(90%)" }}
-      >
-        <Row className="">
-          <Form className="w-50 p-3 m-auto rounded-4 mt-5 justify-content-start align-items-center">
-            <h1 className="mb-4 ">Register New Admin</h1>
-            <h4 className="">Personal Information</h4>
-            <h6 className="mb-4 ">
-              Use a permanent address where you can receive mail.
-            </h6>
+    <Container style={{ transform: "scale(90%)" }}>
+      {/* <Col className="col-md-9 ms-sm-auto col-lg-10 px-md-4"> */}
+      <Row>
+        <Row className="justify-content-start">
+          {" "}
+          <h1 className="mb-4 ">Register New Admin</h1>
+          <h4 className="">Personal Information</h4>
+          <h6 className="mb-4 ">
+            Use a permanent address where you can receive mail.
+          </h6>
+        </Row>
+        <Row className="justify-content-start">
+          <Form>
             <Row className="mb-3">
-              <Form.Group controlId="formGridUsername">
+              <Form.Group ontrolId="formGridUsername">
                 <Form.Label>Username</Form.Label>
                 <Form.Control
                   type="text"
@@ -66,7 +62,8 @@ function Register() {
             </Button>
           </Form>
         </Row>
-      </Container>
+      </Row>
+      {/* </Col> */}
     </Container>
   );
 }
