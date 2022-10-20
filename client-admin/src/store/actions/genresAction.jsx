@@ -7,10 +7,10 @@ export function setGenres(data) {
   };
 }
 
-export function fetchGenres(fetchURL) {
+export function fetchGenres() {
   return async (dispatch) => {
     try {
-      const response = await fetch(fetchURL);
+      const response = await fetch("http://localhost:4000/genres");
 
       if (!response.ok) {
         throw new Error(`Something's wrong!`);
