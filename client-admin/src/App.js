@@ -3,6 +3,7 @@ import "./App.css";
 import NavBar from "./components/NavBar";
 import Sidebar from "./components/Sidebar";
 import Login from "./pages/Login";
+import Register from "./pages/Register";
 // import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
       <NavBar />
       <Sidebar />
       <Login />
+      <Register />
     </div>
   );
 }
