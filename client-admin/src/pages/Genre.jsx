@@ -4,8 +4,8 @@ import Tables from "../components/Tables";
 export default function Genre() {
   return (
     <Container
-      className="col-md-9 ms-sm-auto col-lg-10 px-md-4 "
-      style={{ minHeight: "100vh" }}
+      className="col-md-9 ms-sm-auto col-lg-10 px-md-4"
+      style={{ minHeight: "100vh", transform: "scale(95%)" }}
     >
       <Container>
         <Row className="d-flex container align-items-center justify-content-end">

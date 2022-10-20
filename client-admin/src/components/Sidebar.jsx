@@ -1,5 +1,5 @@
 import { Nav } from "react-bootstrap";
-import Genre from "../pages/Genre";
+import Dashboard from "../pages/Dashboard";
 
 export default function Sidebar() {
   return (
@@ -35,7 +35,7 @@ export default function Sidebar() {
           </div>
         </nav>
 
-        <Genre />
+        <Dashboard />
 
         {/* <main
           className="col-md-9 ms-sm-auto col-lg-10 px-md-4"

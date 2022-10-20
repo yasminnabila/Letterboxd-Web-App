@@ -2,7 +2,10 @@ import { Button, Form, Row, Container } from "react-bootstrap";
 
 function Register() {
   return (
-    <Container style={{ transform: "scale(90%)" }}>
+    <Container
+      className="col-md-9 ms-sm-auto col-lg-10 px-md-4 "
+      style={{ minHeight: "100vh", transform: "scale(90%)" }}
+    >
       {/* <Col className="col-md-9 ms-sm-auto col-lg-10 px-md-4"> */}
       <Row>
         <Row className="justify-content-start">
