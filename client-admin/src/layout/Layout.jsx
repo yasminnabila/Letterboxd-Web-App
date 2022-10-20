@@ -6,8 +6,12 @@ export default function Layout() {
   return (
     <>
       <NavBar />
-      <SideBar />
-      <Outlet />
+      <div className="container-fluid" style={{ minHeight: "100vh" }}>
+        <div className="row">
+          <SideBar />
+          <Outlet />
+        </div>
+      </div>
     </>
   );
 }
