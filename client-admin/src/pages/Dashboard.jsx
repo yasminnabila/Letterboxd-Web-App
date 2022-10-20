@@ -1,50 +1,28 @@
-import { useState, useEffect } from "react";
-import { Container } from "react-bootstrap";
+// import { useState, useEffect } from "react";
+import { Container, Row } from "react-bootstrap";
+import Tables from "../components/Tables";
 
 export default function Dashboard() {
-    const [movie, setMovie] = useState([]);
-    const [loading, setLoading] = useState(true);
-    let [error, setError] = useState("");
-
-    //? EFFECT ONLY WHEN RENDERED
-    useEffect(() => {
-      fetchMovie();
-    }, []);
-
-    async function fetchMovie() {
-      setLoading(true);
-      try {
-        const response = await fetch("http://localhost:4000/movies");
-        if (!response.ok) {
-          throw new Error("Oops! There's something wrong...");
-        }
-        const data = await response.json();
-        setMovie(data);
-      } catch (error) {
-        setError(error);
-      } finally {
-        setLoading(false);
-      }
-    }
-    if (loading) {
-      return (
-        <h1 className="text-center justify-content-center align-items-center">
-          Please wait, page is loading...
+  return (
+    <Container style={{ transform: "scale(90%)" }}>
+      <Row className="justify-content-start">
+        <h1 className="text-5-xl font-bold d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+          Movie List
         </h1>
-      );
-    } else if (error) {
-      return (
-        <h1 className="text-center justify-content-center align-items-center">
-          Sorry, page cannot be loaded
-        </h1>
-      );
-    }
-
-    return(
-        <Container>
-            <Row>
-                
-            </Row>
-        </Container>
-    )
+        <Tables
+          status={"dashboard"}
+          head={[
+            "No",
+            "Title",
+            "Genre",
+            "Rating",
+            "Created By",
+            "Main Image",
+            "Images",
+            "Actions",
+          ]}
+        />
+      </Row>
+    </Container>
+  );
 }
