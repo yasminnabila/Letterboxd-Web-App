@@ -23,7 +23,7 @@ Target:
 - [x] Lifecycle component menggunakan useEffect
 - [x] Membuat server (json-server)
 - [x] Membuat react app untuk client-user (Styling)
-- [ ] Membuat react app untuk client-admin (CRUD)
+- [x] Membuat react app untuk client-admin (CRUD)
 - [x] Menentukan Thema Aplikasi
 - [x] Menentukan Design dan pemilihan CSS Framework
 
@@ -39,7 +39,7 @@ Target:
 Target:
 
 - [x] Lecture - Custom Hooks
-- [ ] Rules of Hooks
+- [X] Rules of Hooks
 - [x] Lecture - React-Router
 - [x] Membuat router user-side (min: home, detail)
 - [ ] Membuat router admin-side (min: login, add admin, CRUD main entitas, CRUD another entitas)
@@ -54,14 +54,14 @@ Target:
 Target:
 
 - [x] Lecture - Redux
-- [ ] State vs Global State
-- [ ] Bagaimana cara membuat Store
-- [ ] Bagaimana cara membuat Reducer
-- [ ] Bagaimana cara membuat Action
-- [ ] Membuat Action Creators
-- [ ] Membuat Action Types
-- [ ] Lecture - Redux-thunk (handle async)
-- [ ] Cara menggunakan combineReducers
+- [x] State vs Global State
+- [x] Bagaimana cara membuat Store
+- [x] Bagaimana cara membuat Reducer
+- [x] Bagaimana cara membuat Action
+- [x] Membuat Action Creators
+- [x] Membuat Action Types
+- [x] Lecture - Redux-thunk (handle async)
+- [x] Cara menggunakan combineReducers
 
 **Report:**
 
@@ -71,10 +71,10 @@ Target:
 
 Target:
 
-- [ ] Lecture - SQL Advance DQL
+- [x] Lecture - SQL Advance DQL
 - [ ] Membuat server mengguanakan express.js, postgreSQL dan Sequelize
 - [ ] Menentukan associations antar tables
-- [ ] Lecture - SQL Transaction
+- [x] Lecture - SQL Transaction
 - [ ] Membuat transaction saat membuat entitas baru pada main table. Pastikan ada assosiasi di dalamnya
 
 **Report:**
@@ -85,8 +85,8 @@ Target:
 
 Target:
 
-- [ ] LC Simulation
-- [ ] Practice, Practice, Practice
+- [x] LC Simulation
+- [x] Practice, Practice, Practice
 
 **Report:**
 

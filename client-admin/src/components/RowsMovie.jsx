@@ -8,27 +8,23 @@ export default function RowsMovie(props) {
       <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700 ">
         {no + 1}
       </th>
-      <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
-        {title}
+      <td className="align-middle">{title}</td>
+      <td className="align-middle">{genre.name}</td>
+      <td className="align-middle">
+        <i className="align-middle">{rating}</i>
       </td>
-      <td className="border-t-0 px-6 border-l-0 border-r-0 text-xs whitespace-nowrap p-4 align-items-center">
-        {genre.name}
+      <td className="align-middle">
+        <i className="align-middle">{author.email}</i>
       </td>
-      <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-        <i className="fas fa-arrow-up text-emerald-500 mr-4">{rating}</i>
-      </td>
-      <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-        <i className="fas fa-arrow-up text-blue-500 mr-4">{author.email}</i>
-      </td>
-      <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-        <div className="mask mask-squircle w-20 h-20">
+      <td className="align-middle">
+        <div className="items-center w-40 rounded">
           <img src={imageUrl} alt={title} style={{ height: "8rem" }} />
         </div>
       </td>
-      <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+      <td className="align-middle">
         <button className="btn btn-dark">Show Casts</button>
       </td>
-      <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+      <td className="align-middle">
         <button className="btn btn-dark">Edit</button>
         <button className="btn btn-dark">Delete</button>
       </td>

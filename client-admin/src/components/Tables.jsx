@@ -1,29 +1,37 @@
-import useFetch from "../hooks/useFetch";
 import RowsMovie from "../components/RowsMovie";
 import RowsGenre from "../components/RowsGenre";
 import { Table } from "react-bootstrap";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchMovies } from "../store/actions/moviesAction";
+import { fetchGenres } from "../store/actions/genresAction";
 
 export default function Tables(props) {
+  const dispatch = useDispatch();
   const { status, head } = props;
-  const { data: movies } = useFetch(
-    "http://localhost:4000/movies?_expand=author&_expand=genre"
-  );
-  const { data: genre } = useFetch("http://localhost:4000/genres");
+  const { movies } = useSelector((state) => {
+    return state.moviesReducer;
+  });
+
+  console.log(movies, "<<<");
+
+  const { genres } = useSelector((state) => {
+    return state.genresReducer;
+  });
+
+  useEffect(() => {
+    dispatch(fetchMovies());
+    dispatch(fetchGenres());
+  }, []);
+
   let tBody;
   const tHead = head.map((e, i) => {
-    return (
-      <th
-        key={i + "x"}
-        className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
-      >
-        {e}
-      </th>
-    );
+    return <th key={i + "x"}>{e}</th>;
   });
   if (status === "dashboard") {
     tBody = movies.map((e, i) => <RowsMovie key={e.id} movie={e} no={i} />);
   } else {
-    tBody = genre.map((e, i) => <RowsGenre key={e.id} genre={e} no={i} />);
+    tBody = genres.map((e, i) => <RowsGenre key={e.id} genre={e} no={i} />);
   }
 
   return (
