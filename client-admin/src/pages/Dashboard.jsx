@@ -19,7 +19,7 @@ export default function Dashboard() {
 
           <Col className="d-flex justify-content-end">
             <Button
-              onClick={() => navigate(`/addmovie`)}
+              onClick={() => navigate(`/add-movie`)}
               className="btn btn-dark "
             >
               <span class="icon material-symbols-outlined"></span>Add New Movie

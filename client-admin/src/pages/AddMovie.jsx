@@ -73,7 +73,7 @@ function AddMovie() {
       >
         <Row>
           <Col className="mt-5 bg-light">
-            <h1 className="text-center mb-5">Create new movie</h1>
+            <h1 className="text-center mb-5">Create movie</h1>
 
             <Form onSubmit={handleSubmit}>
               {/* Movie Name */}

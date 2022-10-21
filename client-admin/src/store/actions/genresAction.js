@@ -1,4 +1,4 @@
-import { SET_GENRES } from "../actionTypes/actionTypes";
+import { SET_GENRES, BASE_URL } from "../actionTypes/actionTypes";
 
 export function setGenres(data) {
   return {
@@ -19,6 +19,28 @@ export function fetchGenres() {
       const genres = await response.json();
 
       dispatch(setGenres(genres));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+}
+
+export function createGenre(genre) {
+  return async function (dispatch) {
+    try {
+      const response = await fetch(BASE_URL + `/genres`, {
+        method: "POST",
+        body: JSON.stringify(genre),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error(`Genre is failed to add`);
+      }
+      const data = await response.json();
+      console.log(data);
     } catch (error) {
       console.log(error);
     }

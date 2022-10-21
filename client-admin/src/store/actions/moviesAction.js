@@ -39,7 +39,7 @@ export function createMovie(movie) {
       });
 
       if (!response.ok) {
-        throw new Error(`Movie is failed to load`);
+        throw new Error(`Movie is failed to add`);
       }
       const data = await response.json();
       console.log(data);

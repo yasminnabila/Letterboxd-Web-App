@@ -1,7 +1,9 @@
 import { Container, Row, Col, Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import Tables from "../components/Tables";
 
 export default function Genre() {
+  const navigate = useNavigate();
   return (
     <Container
       className="col-md-9 ms-sm-auto col-lg-10 px-md-4"
@@ -16,7 +18,10 @@ export default function Genre() {
           </Col>
 
           <Col className="d-flex justify-content-end">
-            <Button className="btn btn-dark ">
+            <Button
+              onClick={() => navigate(`/add-genre`)}
+              className="btn btn-dark "
+            >
               <span class="icon material-symbols-outlined"></span>Add New Genre
             </Button>
           </Col>
