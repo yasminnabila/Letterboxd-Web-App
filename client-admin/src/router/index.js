@@ -4,8 +4,8 @@ import Genre from "../pages/Genre";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Layout from "../layout/Layout";
-import AddMovie from "../pages/AddMovie";
-import AddGenre from "../pages/AddGenre";
+import AddMovie from "../components/AddMovie";
+import AddGenre from "../components/AddGenre";
 
 const router = createBrowserRouter([
   {

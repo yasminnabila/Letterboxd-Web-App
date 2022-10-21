@@ -1,10 +1,10 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { createGenre, fetchGenres } from "../store/actions/genresAction";
 import { Container, Form, Button, Row, Col } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-function AddMovie() {
+function AddGenre() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -74,4 +74,4 @@ function AddMovie() {
   );
 }
 
-export default AddMovie;
+export default AddGenre;

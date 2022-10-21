@@ -1,9 +1,28 @@
 import { Container, Row, Col, Button } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
 import Tables from "../components/Tables";
+import { useNavigate } from "react-router-dom";
+// import { useDispatch } from "react-redux";
+// import { useEffect, useState } from "react";
+// import { createGenre } from "../store/actions/genresAction";
 
 export default function Genre() {
   const navigate = useNavigate();
+  // const dispatch = useDispatch();
+  // const [show, setShow] = useState(false);
+  // const handleClose = () => setShow(false);
+  // const handleShow = () => setShow(true);
+
+  // const [genre, setGenre] = useState({
+  //   name: "",
+  // });
+
+  // function handleAdd(e) {
+  //   e.preventDefault();
+  //   dispatch(createGenre(genre)).then(() => {
+  //     setGenre({ name: "" });
+  //     handleClose();
+  //   });
+  // }
   return (
     <Container
       className="col-md-9 ms-sm-auto col-lg-10 px-md-4"
