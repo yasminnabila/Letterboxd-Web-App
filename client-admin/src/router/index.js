@@ -4,6 +4,7 @@ import Genre from "../pages/Genre";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Layout from "../layout/Layout";
+import AddMovie from "../pages/AddMovie";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register />,
+      },
+      {
+        path: `/addmovie`,
+        element: <AddMovie />,
       },
     ],
   },

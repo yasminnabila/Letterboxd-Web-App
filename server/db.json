@@ -38,9 +38,7 @@
       "imageUrl": "https://media-cache.cinematerial.com/p/500x/nza9lluu/top-gun-maverick-movie-poster.jpg?v=1648561333",
       "rating": 4.1,
       "genreId": 1,
-      "authorId": 1,
-      "createdAt": "2022-10-17 13:49:47.388+07",
-      "updatedAt": "2022-10-17 13:49:47.388+07"
+      "authorId": 1
     },
     {
       "id": 2,
@@ -51,9 +49,7 @@
       "imageUrl": "https://media-cache.cinematerial.com/p/500x/ckamivwa/everything-everywhere-all-at-once-movie-poster.jpg?v=1646776812",
       "rating": 4.5,
       "genreId": 2,
-      "authorId": 1,
-      "createdAt": "2022-10-17 13:49:47.388+07",
-      "updatedAt": "2022-10-17 13:49:47.388+07"
+      "authorId": 1
     },
     {
       "id": 3,
@@ -64,9 +60,7 @@
       "imageUrl": "https://cdn.myanimelist.net/images/about_me/ranking_items/9813430-ed832ec8-f93a-40c8-a52a-958abf4b9d80.jpg?t=1655725854",
       "rating": 3.5,
       "genreId": 3,
-      "authorId": 1,
-      "createdAt": "2022-10-17 13:49:47.388+07",
-      "updatedAt": "2022-10-17 13:49:47.388+07"
+      "authorId": 1
     },
     {
       "id": 4,
@@ -75,11 +69,9 @@
       "synopsis": "On the first day at his new school, Cameron instantly falls for Bianca, the gorgeous girl of his dreams. The only problem is that Bianca is forbidden to date until her ill-tempered, completely un-dateable older sister Kat goes out, too. In an attempt to solve his problem, Cameron singles out the only guy who could possibly be a match for Kat: a mysterious bad boy with a nasty reputation of his own.",
       "trailerUrl": "https://youtu.be/Ax8qnxP2TWY",
       "imageUrl": "https://media-cache.cinematerial.com/p/500x/kuslonid/10-things-i-hate-about-you-movie-poster.jpg?v=1456036365",
-      "rating": 4.0,
+      "rating": 4,
       "genreId": 4,
-      "authorId": 1,
-      "createdAt": "2022-10-17 13:49:47.388+07",
-      "updatedAt": "2022-10-17 13:49:47.388+07"
+      "authorId": 1
     },
     {
       "id": 5,
@@ -90,9 +82,7 @@
       "imageUrl": "https://media-cache.cinematerial.com/p/500x/hmc4otl5/pulp-fiction-theatrical-movie-poster.jpg?v=1479233327",
       "rating": 4.3,
       "genreId": 5,
-      "authorId": 1,
-      "createdAt": "2022-10-17 13:49:47.388+07",
-      "updatedAt": "2022-10-17 13:49:47.388+07"
+      "authorId": 1
     },
     {
       "id": 6,
@@ -103,9 +93,7 @@
       "imageUrl": "https://media-cache.cinematerial.com/p/500x/1ibi7lga/fyre-movie-poster.jpg?v=1547179473",
       "rating": 3.3,
       "genreId": 6,
-      "authorId": 1,
-      "createdAt": "2022-10-17 13:49:47.388+07",
-      "updatedAt": "2022-10-17 13:49:47.388+07"
+      "authorId": 1
     },
     {
       "id": 7,
@@ -116,9 +104,7 @@
       "imageUrl": "https://media-cache.cinematerial.com/p/500x/bqeru2ln/parasite-german-movie-cover.jpg?v=1566751935",
       "rating": 4.6,
       "genreId": 7,
-      "authorId": 1,
-      "createdAt": "2022-10-17 13:49:47.388+07",
-      "updatedAt": "2022-10-17 13:49:47.388+07"
+      "authorId": 1
     },
     {
       "id": 8,
@@ -129,9 +115,7 @@
       "imageUrl": "https://media-cache.cinematerial.com/p/500x/blqjyolf/turning-red-movie-poster.jpg?v=1645828325",
       "rating": 3.8,
       "genreId": 8,
-      "authorId": 1,
-      "createdAt": "2022-10-17 13:49:47.388+07",
-      "updatedAt": "2022-10-17 13:49:47.388+07"
+      "authorId": 1
     },
     {
       "id": 9,
@@ -142,9 +126,7 @@
       "imageUrl": "https://media-cache.cinematerial.com/p/500x/zmyrwuey/last-night-in-soho-movie-poster.jpg?v=1631826157",
       "rating": 3.5,
       "genreId": 9,
-      "authorId": 1,
-      "createdAt": "2022-10-17 13:49:47.388+07",
-      "updatedAt": "2022-10-17 13:49:47.388+07"
+      "authorId": 1
     },
     {
       "id": 10,
@@ -155,9 +137,7 @@
       "imageUrl": "https://media-cache.cinematerial.com/p/500x/4rhbzbmy/1917-british-movie-poster.jpg?v=1570440224",
       "rating": 4.1,
       "genreId": 10,
-      "authorId": 1,
-      "createdAt": "2022-10-17 13:49:47.388+07",
-      "updatedAt": "2022-10-17 13:49:47.388+07"
+      "authorId": 1
     },
     {
       "id": 11,
@@ -166,11 +146,9 @@
       "synopsis": "From the moment she arrives in Freiberg, Germany, to attend the prestigious Tanz Academy, American ballet-dancer Suzy Bannion senses that something horribly evil lurks within the walls of the age-old institution.",
       "trailerUrl": "https://youtu.be/x_FfT98QJks",
       "imageUrl": "https://media-cache.cinematerial.com/p/500x/hzhyfztx/suspiria-swedish-movie-poster.jpg?v=1499626473",
-      "rating": 4.0,
+      "rating": 4,
       "genreId": 11,
-      "authorId": 1,
-      "createdAt": "2022-10-17 13:49:47.388+07",
-      "updatedAt": "2022-10-17 13:49:47.388+07"
+      "authorId": 1
     },
     {
       "id": 12,
@@ -181,12 +159,30 @@
       "imageUrl": "https://media-cache.cinematerial.com/p/500x/xveiw3g3/whiplash-movie-poster.jpg?v=1456046076",
       "rating": 4.4,
       "genreId": 12,
+      "authorId": 1
+    },
+    {
+      "title": "Knives Out",
+      "slug": "knives-out",
       "authorId": 1,
-      "createdAt": "2022-10-17 13:49:47.388+07",
-      "updatedAt": "2022-10-17 13:49:47.388+07"
+      "trailerUrl": "https://youtu.be/sL-9Khv7wa4",
+      "imageUrl": "https://www.zyenhoo.com/wp-content/uploads/2022/05/knivesout2019.jpg",
+      "genreId": "13",
+      "rating": "4.0",
+      "synopsis": "HELL, ANY OF THEM COULD HAVE DONE IT.\nWhen renowned crime novelist Harlan Thrombey is found dead at his estate just after his 85th birthday, the inquisitive and debonair Detective Benoit Blanc is mysteriously enlisted to investigate. From Harlan’s dysfunctional family to his devoted staff, Blanc sifts through a web of red herrings and self-serving lies to uncover the truth behind Harlan’s untimely death.",
+      "id": 13
+    },
+    {
+      "title": "test",
+      "rating": "5",
+      "synopsis": "test",
+      "genreId": "4",
+      "authorId": 1,
+      "imageUrl": "test",
+      "trailerUrl": "a",
+      "id": 14
     }
   ],
-
   "genres": [
     {
       "id": 1,
@@ -303,7 +299,6 @@
       "updatedAt": "2022-10-17 13:49:47.388+07"
     }
   ],
-
   "casts": [
     {
       "id": 1,

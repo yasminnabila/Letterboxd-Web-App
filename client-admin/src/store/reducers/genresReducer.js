@@ -1,4 +1,4 @@
-import { SET_GENRES, SET_LOADING } from "../actionTypes/actionTypes";
+import { SET_GENRES } from "../actionTypes/actionTypes";
 
 const initialState = {
   genres: [],

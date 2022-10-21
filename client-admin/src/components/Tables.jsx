@@ -1,24 +1,25 @@
-import useFetch from "../hooks/useFetch";
 import RowsMovie from "../components/RowsMovie";
 import RowsGenre from "../components/RowsGenre";
 import { Table } from "react-bootstrap";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchMovies } from "../store/actions/moviesAction";
-import { useNavigate } from "react-router-dom";
 import { fetchGenres } from "../store/actions/genresAction";
+import { useNavigate } from "react-router-dom";
 
 export default function Tables(props) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { status, head } = props;
   const { movies } = useSelector((state) => {
-    console.log(state, "<<ini dari tables");
+    // console.log(state, "<<ini dari tables");
     return state.moviesReducer;
   });
 
+  console.log(movies, "<<<");
+
   const { genres } = useSelector((state) => {
-    console.log(state, "<<ini dari tables");
+    // console.log(state, "<<ini dari tables");
     return state.genresReducer;
   });
 
