@@ -39,10 +39,30 @@ export function createGenre(genre) {
       if (!response.ok) {
         throw new Error(`Genre is failed to add`);
       }
-      const data = await response.json();
-      console.log(data);
+      // const data = await response.json();
+      // console.log(data);
+      dispatch(fetchGenres())
     } catch (error) {
       console.log(error);
     }
   };
 }
+
+export const deleteGenre = (id) => {
+  console.log(id);
+  return async (dispatch) => {
+    try {
+      await fetch(BASE_URL + "/categories/" + id, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          // access_token: localStorage.getItem(`access_token`),
+        },
+        // body: JSON.stringify(id)
+      });
+      dispatch(fetchGenres());
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
