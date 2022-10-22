@@ -31,24 +31,50 @@ const Authentication = async (req, res, next) => {
   }
 };
 
-const Authorized = async (req, res, next) => {
+const AuthorizationAdmin = async (req, res, next) => {
   try {
-    const { id: userId } = req.user;
-    const { playlistId } = req.params;
+    const { role } = req.user;
 
-    const findPlaylist = await Playlist.findByPk(playlistId);
-    if (!findPlaylist) {
+    if (role !== "Admin") {
+      throw {
+        code: 403,
+        msg: "Admin access only",
+      };
+    }
+    next();
+  } catch (error) {
+    next(error);
+  }
+};
+
+const AuthorizationDelete = async (req, res, next) => {
+  try {
+    const { id, role } = req.user;
+    const Movieid = req.params.id;
+    if (role === "Admin") {
+      return next();
+    }
+
+    const findMovie = await Movie.findOne({
+      where: {
+        id: Movieid,
+      },
+    });
+
+    if (!findMovie) {
       throw {
         code: 404,
-        msg: "Playlist Not Found",
+        msg: "Movie not found",
       };
     }
 
-    if (userId !== findPlaylist.UserId) {
-      throw {
-        code: 403,
-        msg: "Forbidden access",
-      };
+    if (role === "Staff") {
+      if (data.UserId !== id) {
+         throw {
+           code: 403,
+           msg: "Staff is not allowed to do this action",
+         };
+      }
     }
     next();
   } catch (error) {
@@ -58,5 +84,6 @@ const Authorized = async (req, res, next) => {
 
 module.exports = {
   Authentication,
-  Authorized,
+  AuthorizationAdmin,
+  AuthorizationDelete,
 };
