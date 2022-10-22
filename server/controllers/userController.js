@@ -1,6 +1,7 @@
 const { User } = require("../models");
 const { compareHashedPassword } = require("../helpers/bcryptjs");
 const { signJWT } = require("../helpers/jwt");
+const { OAuth2Client } = require("google-auth-library");
 
 class userController {
   static async register(req, res, next) {
@@ -23,7 +24,7 @@ class userController {
         address: newUser.address,
       });
     } catch (error) {
-    //   console.log(error);
+      //   console.log(error);
       next(error);
     }
   }
@@ -74,6 +75,49 @@ class userController {
       });
     } catch (error) {
       console.log(error);
+      next(error);
+    }
+  }
+  static async googleLogIn(req, res, next) {
+    try {
+      const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
+      const ticket = await client.verifyIdToken({
+        idToken: req.headers.access_token_google,
+        audience: process.env.GOOGLE_CLIENT_ID,
+      });
+
+      const payload = ticket.getPayload();
+      const data = await User.findOrCreate({
+        where: {
+          email: payload.email,
+        },
+        defaults: {
+          username: payload.given_name,
+          email: payload.email,
+          password: "googlepass",
+          role: "Staff",
+          phoneNumber: "12345",
+          address: "google",
+        },
+        hooks: false,
+      });
+
+      let user = data[0];
+      const token = payloadToToken({
+        id: user.id,
+      });
+
+      const username = payload.given_name;
+
+      res.status(200).json({
+        statusCode: 200,
+        access_token: token,
+        email: user.email,
+        username,
+        id: user.id,
+        role: user.role,
+      });
+    } catch (error) {
       next(error);
     }
   }
