@@ -23,7 +23,7 @@ class userController {
         address: newUser.address,
       });
     } catch (error) {
-      console.log(error);
+    //   console.log(error);
       next(error);
     }
   }
@@ -69,6 +69,8 @@ class userController {
         statusCode: 200,
         message: "User logged in successfully",
         access_token: token,
+        id: foundUser.id,
+        email: foundUser.email,
       });
     } catch (error) {
       console.log(error);
