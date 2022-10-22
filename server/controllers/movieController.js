@@ -1,3 +1,5 @@
-class movieController {}
+class movieController {
+    
+}
 
 module.exports = movieController;
