@@ -15,6 +15,7 @@ class publicController {
   static async readOneMovie(req, res, next) {
     try {
       const { slug } = req.query;
+      console.log(req.query, "INI QUERYYYYYY");
       const data = await Movie.findOne({
         where: {
           slug,
@@ -23,6 +24,7 @@ class publicController {
       });
       res.status(200).json(data);
     } catch (error) {
+      console.log(error);
       next(error);
     }
   }
