@@ -58,7 +58,7 @@ module.exports = (sequelize, DataTypes) => {
           },
         },
       },
-      trailerURL: {
+      trailerUrl: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {

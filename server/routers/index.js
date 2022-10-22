@@ -1,11 +1,11 @@
 const router = require("express").Router();
 const session = require("./session");
-const movies = require("./movie");
+const movies = require("./movies");
+const public = require("./public");
 const ErrorHandler = require("../middlewares/ErrorHandler");
-const { Authentication } = require("../middlewares/Authz");
 
+router.use("/public", public);
 router.use("/", session);
-router.use(Authentication);
 router.use("/movies", movies);
 router.use(ErrorHandler);
 
