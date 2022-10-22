@@ -1,6 +1,5 @@
 [
   {
-    "id": 1,
     "username": "yasmin",
     "email": "yasmin@outlook.com",
     "password": "12345",
@@ -9,7 +8,6 @@
     "address": "Jakarta"
   },
   {
-    "id": 2,
     "username": "alul",
     "email": "alul@outlook.com",
     "password": "12345",
@@ -18,7 +16,6 @@
     "address": "Depok"
   },
   {
-    "id": 3,
     "username": "lany",
     "email": "lany@outlook.com",
     "password": "12345",
