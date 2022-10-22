@@ -62,6 +62,9 @@ module.exports = (sequelize, DataTypes) => {
   );
   User.beforeCreate((user) => {
     user.password = hashedPassword(user.password);
+    if (!user.role) {
+      user.role = "Admin";
+    }
   });
   return User;
 };
