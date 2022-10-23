@@ -1,8 +1,13 @@
-import { SET_MOVIES, SET_MOVIE_DETAIL } from "../actionTypes/actionType";
+import {
+  SET_LOADING,
+  SET_MOVIES,
+  SET_MOVIE_DETAIL,
+} from "../actionTypes/actionType";
 
 const initialState = {
   movies: [],
-  movieDetail: [],
+  oneMovie: [],
+  loading: false,
 };
 
 function moviesReducer(state = initialState, action) {
@@ -15,7 +20,12 @@ function moviesReducer(state = initialState, action) {
     case SET_MOVIE_DETAIL:
       return {
         ...state,
-        movieDetail: action.payload,
+        oneMovie: action.payload,
+      };
+    case SET_LOADING:
+      return {
+        ...state,
+        loading: action.loading,
       };
     default:
       return state;

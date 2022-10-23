@@ -2,6 +2,7 @@ import {
   SET_MOVIES,
   SET_MOVIE_DETAIL,
   BASE_URL,
+  SET_LOADING,
 } from "../actionTypes/actionType";
 import Swal from "sweetalert2";
 
@@ -19,14 +20,18 @@ export function setMovieDetail(data) {
   };
 }
 
+export function setLoading(loading) {
+  return {
+    type: SET_LOADING,
+    loading: loading,
+  };
+}
+
 export function fetchMovies() {
   return async (dispatch) => {
     try {
-      const response = await fetch(BASE_URL + `/public`, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      dispatch(setLoading(true));
+      const response = await fetch(BASE_URL + `/public`);
 
       if (!response.ok) {
         throw new Error(`Something's wrong!`);
@@ -36,41 +41,53 @@ export function fetchMovies() {
 
       dispatch(setMovies(movies));
     } catch (error) {
+      console.log(error);
       errorSwal(error);
+    } finally {
+      dispatch(setLoading(false));
     }
   };
 }
 
-export const movieDetail = (id) => {
+// export function movieDetail(id) {
+//   return async (dispatch) => {
+//     try {
+//       console.log("masuk nih ke movieDetail");
+//       dispatch(setLoading(true));
+//       let response = await fetch(BASE_URL + `/public/${id}`);
+
+//       if (!response.ok) {
+//         throw new Error(`Something's wrong!`);
+//       }
+
+//       const data = await response.json();
+//       dispatch(setMovieDetail(data));
+//     } catch (error) {
+//       console.log(error);
+//       errorSwal(error);
+//     } finally {
+//       dispatch(setLoading(false));
+//     }
+//   };
+// }
+
+export const movieDetail = (slug) => {
   return async (dispatch) => {
     try {
-      let response = await fetch(BASE_URL + `/public/${id}`, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-
-      if (!response.ok) {
-        throw new Error(`Something's wrong!`);
-      }
-
+      console.log("trigger");
+      const response = await fetch(BASE_URL + `/public/detail?slug=${slug}`);
+      console.log(response, "ini di store");
+      if (!response.ok) throw new Error("Internal Service Error");
       const data = await response.json();
       dispatch(setMovieDetail(data));
-    } catch (err) {
-      errorSwal(err);
+    } catch (error) {
+      console.log(error);
+      errorSwal(error);
+    } finally {
+      dispatch(setLoading(false));
     }
   };
 };
-
-// function successSwal(message) {
-//   Swal.fire({
-//     position: "center",
-//     icon: "success",
-//     title: message,
-//     showConfirmButton: false,
-//     timer: 1500,
-//   });
-// }
 
 function errorSwal(message) {
   Swal.fire({

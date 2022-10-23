@@ -4,8 +4,7 @@ import { useNavigate } from "react-router-dom";
 function MovieCard({ movie }) {
   const navigate = useNavigate();
   const toMovieDetail = () => {
-    console.log("masuk detail");
-    navigate("/movies/" + movie.id);
+    navigate("/movies/" + movie.slug);
   };
 
   return (
