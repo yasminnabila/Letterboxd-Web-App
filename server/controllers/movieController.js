@@ -61,6 +61,16 @@ class movieController {
       next(error);
     }
   }
+
+  static async readAllCasts(req, res, next) {
+    try {
+      const data = await Cast.findAll({});
+      res.status(200).json(data);
+    } catch (error) {
+      console.log(error);
+      next(error);
+    }
+  }
 }
 
 module.exports = movieController;

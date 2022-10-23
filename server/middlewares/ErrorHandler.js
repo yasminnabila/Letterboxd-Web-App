@@ -10,12 +10,10 @@ module.exports = (error, req, res, next) => {
   } else if (error.name === "JsonWebTokenError") {
     code = 401;
     msg = "Invalid token";
-  }
-  // else if (error.name === "SequelizeDatabaseError") {
-  //   code = 404;
-  //   msg = "Data not found";
-  // }
-  else if (error.code) {
+  } else if (error.name === "SequelizeDatabaseError") {
+    code = 404;
+    msg = "Data not found";
+  } else if (error.code) {
     code = error.code;
     msg = error.msg;
   }
