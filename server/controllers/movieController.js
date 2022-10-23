@@ -75,7 +75,8 @@ class movieController {
   static async createNewMovie(req, res, next) {
     const t = await sequelize.transaction();
     try {
-      const { id: UserId } = req.user;
+      // const { id: UserId } = req.user;
+      // console.log(req.user, id, "<<<<<<")
       const {
         title,
         synopsis,
@@ -99,7 +100,7 @@ class movieController {
           imageUrl,
           rating: +rating,
           GenreId: +GenreId,
-          UserId: +UserId,
+          UserId: req.user.id,
         },
         {
           transaction: t,
@@ -199,6 +200,7 @@ class movieController {
         message: "Movie is updated successfully",
       });
     } catch (error) {
+      console.log(error);
       next(error);
       await t.rollback();
     }

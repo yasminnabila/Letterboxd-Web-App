@@ -1,53 +1,73 @@
 import { useDispatch, useSelector } from "react-redux";
 import { fetchGenres } from "../store/actions/genresAction";
+import { updateMovie } from "../store/actions/moviesAction";
 import { Container, Form, Button, Row, Col } from "react-bootstrap";
 import { useState, useEffect } from "react";
-import { createMovie } from "../store/actions/moviesAction";
 import { useNavigate } from "react-router-dom";
 
-function AddMovie() {
+function EditMovie() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const { genres } = useSelector((state) => {
-    // console.log(state, "<<ini dari tables");
     return state.genresReducer;
   });
 
+  const { movieDetail } = useSelector((state) => {
+    // console.log(state, "INI MOVIE DETAIL KAK<<<<<");
+    return state.moviesReducer;
+  });
+
+  const MovieCast = movieDetail?.Casts ?? [0];
+  // console.log(MovieCast[0]?.profilePict, "<<<<<");
+
+  useEffect(() => {
+    dispatch(fetchGenres());
+
+    setForm({
+      title: movieDetail.title,
+      rating: movieDetail.rating,
+      synopsis: movieDetail.synopsis,
+      GenreId: movieDetail.GenreId,
+      imageUrl: movieDetail.imageUrl,
+      trailerUrl: movieDetail.trailerUrl,
+      profilePict1: MovieCast[0]?.profilePict,
+      profilePict2: MovieCast[1]?.profilePict,
+      profilePict3: MovieCast[2]?.profilePict,
+      name1: MovieCast[0]?.name,
+      name2: MovieCast[1]?.name,
+      name3: MovieCast[2]?.name,
+    });
+  }, [movieDetail]);
+
   const [form, setForm] = useState({
-    title: "",
-    rating: "",
-    synopsis: "",
-    GenreId: "",
-    imageUrl: "",
-    trailerUrl: "",
-    profilePict1: "",
-    profilePict2: "",
-    profilePict3: "",
-    name1: "",
-    name2: "",
-    name3: "",
+    title: movieDetail.title,
+    rating: movieDetail.rating,
+    synopsis: movieDetail.synopsis,
+    GenreId: movieDetail.GenreId,
+    imageUrl: movieDetail.imageUrl,
+    trailerUrl: movieDetail.trailerUrl,
+    profilePict1: movieDetail.profilePict1,
+    profilePict2: movieDetail.profilePict2,
+    profilePict3: movieDetail.profilePict3,
+    name1: movieDetail.name1,
+    name2: movieDetail.name2,
+    name3: movieDetail.name3,
   });
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    console.log(name, value, "<<<");
-    setForm({
+    let newMovie = {
       ...form,
-      [name]: value,
-    });
+    };
+    newMovie[name] = value;
+    setForm(newMovie);
   };
 
-  useEffect(() => {
-    dispatch(fetchGenres());
-  }, []);
-
-  const handleSubmit = (event) => {
+  const handleEdit = (event) => {
     event.preventDefault();
-    console.log(form, "<<<<<<<");
-    dispatch(createMovie(form)).then(() => {
-      navigate("/");
-    });
+    dispatch(updateMovie(form, movieDetail.id));
+    navigate(`/`);
   };
 
   return (
@@ -58,9 +78,9 @@ function AddMovie() {
       >
         <Row>
           <Col className="mt-5 bg-light">
-            <h1 className="text-center mb-5">Create movie</h1>
+            <h1 className="text-center mb-5">Edit movie</h1>
 
-            <Form onSubmit={handleSubmit}>
+            <Form onSubmit={handleEdit}>
               {/* Movie Name */}
               <Form.Group className="mb-3">
                 <Form.Label>Movie Title</Form.Label>
@@ -189,7 +209,7 @@ function AddMovie() {
                   <br />
                   <Form.Control
                     name="profilePict2"
-                    value={form.profilePpict2}
+                    value={form.profilePict2}
                     onChange={handleChange}
                     type="text"
                     placeholder="Input cast image url here"
@@ -209,6 +229,9 @@ function AddMovie() {
               <Button variant="primary" type="submit">
                 Submit
               </Button>
+              <Button onClick={() => navigate(`/`)} variant="warning">
+                Cancel
+              </Button>
             </Form>
           </Col>
         </Row>
@@ -217,4 +240,4 @@ function AddMovie() {
   );
 }
 
-export default AddMovie;
+export default EditMovie;

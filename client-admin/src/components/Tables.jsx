@@ -13,8 +13,6 @@ export default function Tables(props) {
     return state.moviesReducer;
   });
 
-  console.log(movies, "<<<");
-
   const { genres } = useSelector((state) => {
     return state.genresReducer;
   });

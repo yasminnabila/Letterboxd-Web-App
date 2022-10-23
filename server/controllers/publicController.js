@@ -25,6 +25,27 @@ class publicController {
       next(error);
     }
   }
+
+  static async readOneMovieById(req, res, next) {
+    try {
+      const { id } = req.params;
+      const data = await Movie.findOne({
+        where: {
+          id,
+        },
+        include: [Genre, Cast],
+      });
+      if (!data) {
+        throw {
+          code: 404,
+          msg: "Movie not found",
+        };
+      }
+      res.status(200).json(data);
+    } catch (error) {
+      next(error);
+    }
+  }
 }
 
 module.exports = publicController;

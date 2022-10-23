@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, redirect } from "react-router-dom";
 import Dashboard from "../pages/Dashboard";
 import Genre from "../pages/Genre";
 import Login from "../pages/Login";
@@ -6,10 +6,14 @@ import Register from "../pages/Register";
 import Layout from "../layout/Layout";
 import AddMovie from "../components/AddMovie";
 import AddGenre from "../components/AddGenre";
+import EditMovie from "../components/EditMovie";
 
 const router = createBrowserRouter([
   {
     element: <Layout />,
+    loader: () => {
+      if (!localStorage.getItem("access_token")) throw redirect("/login");
+    },
     children: [
       {
         path: "/",
@@ -31,11 +35,18 @@ const router = createBrowserRouter([
         path: `/add-genre`,
         element: <AddGenre />,
       },
+      {
+        path: `/edit-movie/:id`,
+        element: <EditMovie />,
+      },
     ],
   },
   {
     path: "/login",
     element: <Login />,
+    loader: () => {
+      if (localStorage.getItem("access_token")) throw redirect("/");
+    },
   },
 ]);
 

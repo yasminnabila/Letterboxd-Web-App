@@ -1,4 +1,4 @@
-import { SET_MOVIES, SET_MOVIE_DETAIL } from "../actionTypes/actionTypes";
+import { SET_MOVIES, SET_MOVIE_DETAIL } from "../actionTypes/actionType";
 
 const initialState = {
   movies: [],
