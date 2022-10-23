@@ -1,4 +1,11 @@
-const { User, Movie, Cast, Genre } = require("../models");
+const {
+  User,
+  Movie,
+  Cast,
+  Genre,
+  sequelize,
+  Sequelize: { op },
+} = require("../models");
 
 class movieController {
   static async readAllMovies(req, res, next) {
@@ -69,6 +76,57 @@ class movieController {
     } catch (error) {
       console.log(error);
       next(error);
+    }
+  }
+
+  static async createNewMovie(req, res, next) {
+    const t = await sequelize.transaction();
+    try {
+      const { id: UserId } = req.user;
+      const {
+        title,
+        synopsis,
+        trailerUrl,
+        imageUrl,
+        rating,
+        GenreId,
+        name1,
+        name2,
+        name3,
+        pict1,
+        pict2,
+        pict3,
+      } = req.body;
+      const createMovie = await Movie.create(
+        {
+          title,
+          synopsis,
+          trailerUrl,
+          imageUrl,
+          rating: +rating,
+          GenreId: +GenreId,
+          UserId: +UserId,
+        },
+        {
+          transaction: t,
+        }
+      );
+      const createimage = await Cast.bulkCreate(
+        [
+          { MovieId: createMovie.id, name: name1, profilePict: pict1 },
+          { MovieId: createMovie.id, name: name2, profilePict: pict2 },
+          { MovieId: createMovie.id, name: name3, profilePict: pict3 },
+        ],
+        { transaction: t }
+      );
+      await t.commit();
+      res.status(201).json({
+        message: "Movie is created successfully",
+      });
+    } catch (error) {
+      console.log(error);
+      next(error);
+      t.rollback();
     }
   }
 }

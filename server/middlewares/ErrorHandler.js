@@ -12,7 +12,7 @@ module.exports = (error, req, res, next) => {
     msg = "Invalid token";
   } else if (error.name === "SequelizeDatabaseError") {
     code = 404;
-    msg = "Data not found";
+    msg = "Database Error";
   } else if (error.code) {
     code = error.code;
     msg = error.msg;

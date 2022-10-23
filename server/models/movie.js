@@ -34,18 +34,7 @@ module.exports = (sequelize, DataTypes) => {
           },
         },
       },
-      slug: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-          notNull: {
-            msg: "Slug is required",
-          },
-          notEmpty: {
-            msg: "Slug cannot be empty",
-          },
-        },
-      },
+      slug: DataTypes.STRING,
       synopsis: {
         type: DataTypes.TEXT,
         allowNull: false,
@@ -117,6 +106,9 @@ module.exports = (sequelize, DataTypes) => {
     }
   );
   Movie.beforeCreate((movie) => {
+    movie.slug = formatSlug(movie.title);
+  });
+  Movie.beforeUpdate((movie) => {
     movie.slug = formatSlug(movie.title);
   });
   return Movie;
