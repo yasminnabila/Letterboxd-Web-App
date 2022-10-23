@@ -1,7 +1,7 @@
 export default function RowsMovie(props) {
   const {
     no,
-    movie: { title, rating, imageUrl, author, genre },
+    movie: { title, rating, imageUrl, User, Genre },
   } = props;
   return (
     <tr className="align-items-center">
@@ -9,12 +9,12 @@ export default function RowsMovie(props) {
         {no + 1}
       </th>
       <td className="align-middle">{title}</td>
-      <td className="align-middle">{genre.name}</td>
+      <td className="align-middle">{Genre.name}</td>
       <td className="align-middle">
         <i className="align-middle">{rating}</i>
       </td>
       <td className="align-middle">
-        <i className="align-middle">{author.email}</i>
+        <i className="align-middle">{User.email}</i>
       </td>
       <td className="align-middle">
         <div className="items-center w-40 rounded">

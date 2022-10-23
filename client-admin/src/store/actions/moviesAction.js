@@ -11,7 +11,7 @@ export function fetchMovies() {
   return async (dispatch) => {
     try {
       const response = await fetch(
-        BASE_URL + `/movies?_expand=author&_expand=genre`
+        BASE_URL + `/movies`
       );
 
       if (!response.ok) {
