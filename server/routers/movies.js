@@ -9,9 +9,11 @@ router.get("/", movieController.readAllMovies);
 router.get("/detail", movieController.readOneMovieBySlug);
 router.post("/", movieController.createNewMovie);
 router.get("/genres", movieController.readAllGenres);
+router.post("/genres", movieController.createNewGenre);
 router.get("/casts", movieController.readAllCasts);
 router.get("/:id", movieController.readOneMovieById);
 router.put("/:id", AuthorizationAdmin, movieController.updateMovie);
-router.delete("/:id", AuthorizationDelete, movieController.updateMovie);
+router.delete("/:id", AuthorizationDelete, movieController.deleteMovieById);
+router.put("/genres/:id", movieController.updateGenre);
 
 module.exports = router;
