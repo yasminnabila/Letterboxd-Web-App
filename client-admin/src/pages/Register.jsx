@@ -1,6 +1,51 @@
 import { Button, Form, Row, Container } from "react-bootstrap";
+import swal from "sweetalert";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { register } from "../store/actions/userAction";
 
 function Register() {
+  const [input, setInputRegister] = useState({
+    username: "",
+    password: "",
+    email: "",
+    address: "",
+    phoneNumber: "",
+  });
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const handleOnChange = (e) => {
+    const { name, value } = e.target;
+    setInputRegister({
+      ...input,
+      [name]: value,
+    });
+  };
+
+  const handleOnSubmit = (e) => {
+    e.preventDefault();
+    dispatch(register(input))
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(res.statusText);
+        }
+        return res.json();
+      })
+      .then((data) => {
+        swal("Yeay!", `${data.message}`, "success");
+        navigate("/");
+      })
+      .catch((error) => {
+        swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: error,
+        });
+      });
+  };
+
   return (
     <Container
       className="col-md-9 ms-sm-auto col-lg-10 px-md-4 "
@@ -22,6 +67,9 @@ function Register() {
               <Form.Group ontrolId="formGridUsername">
                 <Form.Label>Username</Form.Label>
                 <Form.Control
+                  name="username"
+                  value={input.username}
+                  onChange={handleOnChange}
                   type="text"
                   placeholder="Username"
                   className="mb-3"
@@ -30,6 +78,9 @@ function Register() {
               <Form.Group controlId="formGridEmail">
                 <Form.Label className="">Email</Form.Label>
                 <Form.Control
+                  name="email"
+                  value={input.email}
+                  onChange={handleOnChange}
                   type="email"
                   placeholder="Email"
                   className="mb-3"
@@ -38,6 +89,9 @@ function Register() {
               <Form.Group controlId="formGridPassword">
                 <Form.Label className="">Password</Form.Label>
                 <Form.Control
+                  name="password"
+                  value={input.password}
+                  onChange={handleOnChange}
                   type="password"
                   placeholder="Password"
                   className="mb-3"
@@ -46,6 +100,9 @@ function Register() {
               <Form.Group controlId="formGridPhoneNumber">
                 <Form.Label className="">Phone Number</Form.Label>
                 <Form.Control
+                  name="phoneNumber"
+                  value={input.phoneNumber}
+                  onChange={handleOnChange}
                   type="text"
                   placeholder="Phone number"
                   className="mb-3"
@@ -54,13 +111,16 @@ function Register() {
               <Form.Group controlId="formGridAddress">
                 <Form.Label className="">Address</Form.Label>
                 <Form.Control
+                  name="address"
+                  value={input.address}
+                  onChange={handleOnChange}
                   type="text"
                   placeholder="Address"
                   className="mb-3"
                 />
               </Form.Group>
             </Row>
-            <Button variant="primary" type="submit">
+            <Button onClick={handleOnSubmit} variant="primary" type="submit">
               Submit
             </Button>
           </Form>

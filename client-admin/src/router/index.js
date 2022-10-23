@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, redirect } from "react-router-dom";
 import Dashboard from "../pages/Dashboard";
 import Genre from "../pages/Genre";
 import Login from "../pages/Login";
@@ -10,6 +10,9 @@ import AddGenre from "../components/AddGenre";
 const router = createBrowserRouter([
   {
     element: <Layout />,
+    loader: () => {
+      if (!localStorage.getItem("access_token")) throw redirect("/login");
+    },
     children: [
       {
         path: "/",
@@ -36,6 +39,9 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login />,
+    loader: () => {
+      if (localStorage.getItem("access_token")) throw redirect("/");
+    },
   },
 ]);
 

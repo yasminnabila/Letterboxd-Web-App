@@ -1,6 +1,54 @@
 import { Button, Form, Row, Col, Container } from "react-bootstrap";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+// import { useDispatch } from "react-redux";
+// import { login } from "../store/actions/userAction";
+import { BASE_URL } from "../store/actionTypes/actionTypes";
+import Swal from "sweetalert2";
 
 function Login() {
+  const [input, setInputLogin] = useState({
+    email: "",
+    password: "",
+  });
+
+  const navigate = useNavigate();
+
+  const handleOnChange = (e) => {
+    const { name, value } = e.target;
+    setInputLogin({
+      ...input,
+      [name]: value,
+    });
+  };
+  const handleOnSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      let response = await fetch(BASE_URL + `/login`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(input),
+      });
+      let data = await response.json();
+      if (data.err) throw data.message;
+      localStorage.setItem("access_token", data.access_token);
+      navigate("/");
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Log in success!",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: error,
+      });
+    }
+  };
   return (
     <Container
       fluid
@@ -13,7 +61,10 @@ function Login() {
         style={{ transform: "scale(90%)" }}
       >
         <Row className="d-flex justify-content-center align-items-center">
-          <Form className="w-50 p-3 m-auto rounded-4 mt-5 justify-content-center align-items-center">
+          <Form
+            onSubmit={handleOnSubmit}
+            className="w-50 p-3 m-auto rounded-4 mt-5 justify-content-center align-items-center"
+          >
             <Row className="d-flex justify-content-center align-items-center">
               <img
                 src={
@@ -32,12 +83,24 @@ function Login() {
             <Row className="mb-3">
               <Form.Group as={Col} controlId="formGridEmail">
                 <Form.Label className="text-light">Email address</Form.Label>
-                <Form.Control type="email" placeholder="Email" />
+                <Form.Control
+                  value={input.email}
+                  onChange={handleOnChange}
+                  name="email"
+                  type="email"
+                  placeholder="Email"
+                />
               </Form.Group>
 
               <Form.Group as={Col} controlId="formGridPassword">
                 <Form.Label className="text-light">Password</Form.Label>
-                <Form.Control type="password" placeholder="Password" />
+                <Form.Control
+                  value={input.password}
+                  onChange={handleOnChange}
+                  name="password"
+                  type="password"
+                  placeholder="Password"
+                />
               </Form.Group>
             </Row>
             <Button variant="primary" type="submit">
