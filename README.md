@@ -32,10 +32,6 @@ Target:
 - Hari ini saya belajar React component juga cara menggunakan local state, event handling, serta menampilkan render data di client. Selain itu, saya juga belajar cara menggunakan server dummy menggunakan JSONserver.
 - Pada challenge ini, saya memilih tema 'Movie' dengan referensi dari website Letterboxd. Saya juga akan menggunakan CSS framework, yaitu Bootstrap
 - Progress challenge hari, ini saya mulai membuat component-component yang dibutuhkan untuk client-side user serta belajar menggunakan react-bootstrap
-  ...
-
-> contoh: Hari ini saya belajar React Component. Saya memahami bagaimana cara React bekerja. Lifecycle yang sudah saya coba adalah componentDidMount yang digunakan untuk fetch data dst. Namun saya belum mencoba menggunakan onSubmit dikarenakan data yang didapat belum sesuai.
-> Pada tugas ini, saya memilih Tema A dengan mengambil referensi dari B. Saya juga akan menggunakan CSS Framework yaitu Tailwind CSS
 
 ## W1D2
 
@@ -52,7 +48,6 @@ Target:
 
 - Hari ini saya belajar mengenai Hooks dan React-Router
 - Progress challenge hari ini, saya masih melanjutkan setup layout user. Saya juga sudah berhasil fetch data menggunakan hooks bernama fetchMovie dengan lifecycle useEffect
-  ...
 
 ## W1D3
 
@@ -72,7 +67,6 @@ Target:
 
 - Hari ini saya belajar Redux dan membuat global state
 - Progress challenge hari ini, saya masih melanjutkan layouting serta belajar menggunakan router link di NavBar untuk navigasi antar pages.
-  ...
 
 ## W1D4
 
@@ -87,7 +81,6 @@ Target:
 **Report:**
 - Hari ini saya belajar mengenai advance SQL
 - Progress challenge hari ini, saya sudah memulai layouting serta menambahkan fungsional seperti event handling untuk navigasi dan penambahan entitas. Selain itu, saya sudah mulai mengaplikasikan react redux di admin-side.
-...
 
 ## W1D5
 
@@ -97,5 +90,4 @@ Target:
 - [✅] Practice, Practice, Practice
 
 **Report:**
-- Progress challenge hari, saya belajar untuk add dan edit entitas utama.
-...
+- Progress challenge hari, saya belajar untuk add dan edit entitas utama serta entitas ketiga.
