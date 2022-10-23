@@ -1,9 +1,7 @@
 import { Button, Form, Row, Container } from "react-bootstrap";
-import swal from "sweetalert";
+import Swal from "sweetalert2";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { register } from "../store/actions/userAction";
+import { BASE_URL } from "../store/actionTypes/actionTypes";
 
 function Register() {
   const [input, setInputRegister] = useState({
@@ -13,8 +11,6 @@ function Register() {
     address: "",
     phoneNumber: "",
   });
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
 
   const handleOnChange = (e) => {
     const { name, value } = e.target;
@@ -24,26 +20,41 @@ function Register() {
     });
   };
 
-  const handleOnSubmit = (e) => {
+  const handleOnSubmit = async (e) => {
     e.preventDefault();
-    dispatch(register(input))
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error(res.statusText);
-        }
-        return res.json();
-      })
-      .then((data) => {
-        swal("Yeay!", `${data.message}`, "success");
-        navigate("/");
-      })
-      .catch((error) => {
-        swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: error,
-        });
+    try {
+      const response = await fetch(BASE_URL + `/register`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          access_token: localStorage.getItem("access_token"),
+        },
+        body: JSON.stringify(input),
       });
+      let data = await response.json();
+      if (data.err) throw data.message;
+      setInputRegister({
+        username: "",
+        email: "",
+        password: "",
+        phoneNumber: "",
+        address: "",
+      });
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Register new admin success!",
+        showConfirmButton: false,
+        timer: 1500,
+        timerProgressBar: true,
+      });
+    } catch (err) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops, something's wrong!",
+        text: err,
+      });
+    }
   };
 
   return (
@@ -62,7 +73,7 @@ function Register() {
           </h6>
         </Row>
         <Row className="justify-content-start">
-          <Form>
+          <Form onSubmit={handleOnSubmit}>
             <Row className="mb-3">
               <Form.Group ontrolId="formGridUsername">
                 <Form.Label>Username</Form.Label>
@@ -120,7 +131,7 @@ function Register() {
                 />
               </Form.Group>
             </Row>
-            <Button onClick={handleOnSubmit} variant="primary" type="submit">
+            <Button variant="primary" type="submit">
               Submit
             </Button>
           </Form>
