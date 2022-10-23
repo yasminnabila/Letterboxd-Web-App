@@ -264,12 +264,21 @@ class movieController {
     }
   }
 
-  static async deleteTheGenre(req, res, next) {
+  static async deleteGenreById(req, res, next) {
     try {
-      let data = await Genre.findByPk(req.params.id);
-      if (!data) throw { name: "Not Found" };
-      await Genre.destroy({ where: { id: req.params.id } });
-      res.status(200).json({ message: ` ${data.name} success to delete` });
+      const { id } = req.params;
+      let data = await Genre.findByPk(id);
+      if (!data) {
+        throw {
+          code: 404,
+          msg: "Genre not found",
+        };
+      }
+      await Genre.destroy({ where: { id: id } });
+      res.status(200).json({
+        statusCode: 200,
+        message: `${data.name} is deleted successfully`,
+      });
     } catch (err) {
       next(err);
     }
