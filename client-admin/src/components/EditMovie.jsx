@@ -4,6 +4,7 @@ import { updateMovie } from "../store/actions/moviesAction";
 import { Container, Form, Button, Row, Col } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import ClipLoader from "react-spinners/ClipLoader";
 
 function EditMovie() {
   const dispatch = useDispatch();
@@ -13,7 +14,7 @@ function EditMovie() {
     return state.genresReducer;
   });
 
-  const { movieDetail } = useSelector((state) => {
+  const { movieDetail, loading } = useSelector((state) => {
     // console.log(state, "INI MOVIE DETAIL KAK<<<<<");
     return state.moviesReducer;
   });
@@ -69,6 +70,27 @@ function EditMovie() {
     dispatch(updateMovie(form, movieDetail.id));
     navigate(`/`);
   };
+
+  if (loading) {
+    return (
+      <>
+        <Container
+          className="col-md-9 ms-sm-auto col-lg-10 px-md-4 "
+          style={{ minHeight: "100vh", transform: "scale(95%)" }}
+        >
+          >
+          <Container className="text-center mt-5 mb-3">
+            <h1>Loading the page...</h1>
+            <ClipLoader
+              color="#36d7b7"
+              size={100}
+              aria-label="Loading Spinner"
+            />
+          </Container>
+        </Container>
+      </>
+    );
+  }
 
   return (
     <>

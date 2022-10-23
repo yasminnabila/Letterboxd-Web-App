@@ -7,6 +7,7 @@ import Layout from "../layout/Layout";
 import AddMovie from "../components/AddMovie";
 import AddGenre from "../components/AddGenre";
 import EditMovie from "../components/EditMovie";
+import Detail from "../pages/Detail";
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: `/edit-movie/:id`,
         element: <EditMovie />,
+      },
+      {
+        path: "/movies/:id",
+        element: <Detail />,
       },
     ],
   },

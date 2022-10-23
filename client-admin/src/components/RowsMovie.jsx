@@ -1,4 +1,4 @@
-import { deleteMovie, movieDetail } from "../store/actions/moviesAction";
+import { deleteMovie, movieDetailById } from "../store/actions/moviesAction";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
@@ -11,7 +11,7 @@ export default function RowsMovie(props) {
 
   const handleClickEdit = (event, id) => {
     event.preventDefault();
-    dispatch(movieDetail(id));
+    dispatch(movieDetailById(id));
     navigate(`/edit-movie/${id}`);
   };
 
@@ -36,7 +36,12 @@ export default function RowsMovie(props) {
         </div>
       </td>
       <td className="align-middle">
-        <button className="btn btn-dark">Show Casts</button>
+        <button
+          onClick={() => navigate(`/movies/${id}`)}
+          className="btn btn-dark"
+        >
+          Show Casts
+        </button>
       </td>
       <td className="align-middle">
         <button
