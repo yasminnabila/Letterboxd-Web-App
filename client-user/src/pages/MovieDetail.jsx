@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { Col, Card, Container, Row } from "react-bootstrap";
-// import { AiFillYoutube } from "react-icons/ai";
+import ClipLoader from "react-spinners/ClipLoader";
 import { movieDetail } from "../store/actions/movieAction";
 
 function MovieDetail() {
@@ -14,7 +14,6 @@ function MovieDetail() {
   });
 
   const MovieGenre = oneMovie?.Genre?.name;
-  // console.log(MovieGenre);
 
   const MovieCast = oneMovie?.Casts ?? [0];
   console.log(MovieCast);
@@ -24,9 +23,22 @@ function MovieDetail() {
 
   if (loading) {
     return (
-      <div className="contain">
-        <div className="loader"></div>
-      </div>
+      <>
+        <Container
+          className="col-md-9 ms-sm-auto col-lg-10 px-md-4 "
+          style={{ minHeight: "100vh", transform: "scale(95%)" }}
+        >
+          >
+          <Container className="text-center mt-5 mb-3">
+            <h1>Loading the page...</h1>
+            <ClipLoader
+              color="#36d7b7"
+              size={100}
+              aria-label="Loading Spinner"
+            />
+          </Container>
+        </Container>
+      </>
     );
   }
 
@@ -68,24 +80,29 @@ function MovieDetail() {
         </Col>
         <Container />
         <Container>
-          <Row className="container-fluid d-flex justify-content-center">
-            <h2 style={{ color: "white" }}>CASTS</h2>
-            <div id="rowDetail" className="row">
+          <Row className="d-flex justify-content-center">
+            <h2 className="text-center">{movieDetail.title}</h2>
+            <h3 className="text-center">Cast List</h3>
+            <div
+              id="rowDetail"
+              className="row d-flex align-items-center justify-content-center"
+            >
               {MovieCast.map((el) => {
                 return (
                   <div
-                    className="card m-2 d-flex align-items-center"
-                    style={{ backgroundColor: "#546e7a", width: "13rem" }}
+                    className="card m-3 d-flex align-items-center justify-content-center"
+                    style={{ backgroundColor: "black", width: "13rem" }}
                   >
                     <img
                       id="imgCast"
-                      className="card-img-top d-flex align-items-center"
+                      className="p-2 d-flex align-items-center justify-content-center"
                       src={el.profilePict}
-                      stle={{ width: "10rem" }}
                       alt="Card image cap"
+                      variant="top"
+                      style={{ height: 300 }}
                     />
                     <div className="card-body">
-                      <h6 className="card-title">{el.name}</h6>
+                      <h6 className="card-title text-light">{el.name}</h6>
                     </div>
                   </div>
                 );

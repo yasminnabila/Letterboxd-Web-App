@@ -74,9 +74,9 @@ export function fetchMovies() {
 export const movieDetail = (slug) => {
   return async (dispatch) => {
     try {
-      console.log("trigger");
+      dispatch(setLoading(true));
       const response = await fetch(BASE_URL + `/public/detail?slug=${slug}`);
-      console.log(response, "ini di store");
+
       if (!response.ok) throw new Error("Internal Service Error");
       const data = await response.json();
       dispatch(setMovieDetail(data));
