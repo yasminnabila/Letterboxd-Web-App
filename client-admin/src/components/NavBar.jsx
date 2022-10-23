@@ -1,4 +1,4 @@
-import { Navbar, Form } from "react-bootstrap";
+import { Navbar } from "react-bootstrap";
 
 export default function NavBar() {
   return (
@@ -12,7 +12,7 @@ export default function NavBar() {
           alt="Letterboxd logo"
         />
       </Navbar.Brand>
-      <Form className="justify-content-start">
+      {/* <Form className="justify-content-start">
         <Form.Control
           type="text"
           placeholder="Search"
@@ -20,7 +20,7 @@ export default function NavBar() {
           bg="light"
           aria-label="Search"
         />
-      </Form>
+      </Form> */}
       <Navbar.Toggle />
       <Navbar.Collapse className="justify-content-center"></Navbar.Collapse>
     </Navbar>

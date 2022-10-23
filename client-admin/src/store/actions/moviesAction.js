@@ -2,6 +2,8 @@ import {
   SET_MOVIES,
   SET_MOVIE_DETAIL,
   BASE_URL,
+  SET_MOVIE_DETAIL_SLUG,
+  SET_LOADING,
 } from "../actionTypes/actionTypes";
 import Swal from "sweetalert2";
 
@@ -19,8 +21,23 @@ export function setMovieDetail(data) {
   };
 }
 
+export function setMovieDetailSlug(data) {
+  return {
+    type: SET_MOVIE_DETAIL_SLUG,
+    payload: data,
+  };
+}
+
+export function loadingProduct(loading) {
+  return {
+    type: SET_LOADING,
+    loading: loading,
+  };
+}
+
 export function fetchMovies() {
   return async (dispatch) => {
+    dispatch(loadingProduct(true));
     try {
       const response = await fetch(BASE_URL + `/movies`, {
         headers: {
@@ -37,6 +54,8 @@ export function fetchMovies() {
       dispatch(setMovies(movies));
     } catch (error) {
       errorSwal(error);
+    } finally {
+      dispatch(loadingProduct(false));
     }
   };
 }
@@ -110,9 +129,10 @@ export function updateMovie(movie, id) {
   };
 }
 
-export const movieDetail = (id) => {
+export const movieDetailById = (id) => {
   return async (dispatch) => {
     try {
+      dispatch(loadingProduct(true));
       let response = await fetch(BASE_URL + `/movies/${id}`, {
         headers: {
           access_token: localStorage.getItem("access_token"),
@@ -127,9 +147,26 @@ export const movieDetail = (id) => {
       dispatch(setMovieDetail(data));
     } catch (err) {
       errorSwal(err);
+    } finally {
+      dispatch(loadingProduct(false));
     }
   };
 };
+
+// export const movieDetailSlug = (slug) => {
+//   return async (dispatch) => {
+//     try {
+//       console.log("ini di state!");
+//       const response = await fetch(BASE_URL + `/movies/detail?slug=${slug}`);
+//       if (!response.ok) throw new Error("Internal Service Error");
+//       const data = await response.json();
+//       dispatch(setMovieDetailSlug(data));
+//     } catch (error) {
+//       console.log(error);
+//       errorSwal(error);
+//     }
+//   };
+// };
 
 function successSwal(message) {
   Swal.fire({

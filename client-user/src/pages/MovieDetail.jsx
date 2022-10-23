@@ -1,86 +1,115 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { Col, Card, Container, Row } from "react-bootstrap";
-import { AiFillYoutube } from "react-icons/ai";
-import { fetchMovies } from "../store/actions/movieAction";
+import ClipLoader from "react-spinners/ClipLoader";
+import { movieDetail } from "../store/actions/movieAction";
 
 function MovieDetail() {
   const dispatch = useDispatch();
-  const { movies } = useSelector((state) => {
-    console.log(state, "<<<");
+  let { slug } = useParams();
+  const { oneMovie, loading } = useSelector((state) => {
+    console.log(state);
     return state;
   });
-  // const [loading, setLoading] = useState(true);
-  // let [error, setError] = useState("");
-  let { id } = useParams();
 
-  //? EFFECT ONLY WHEN RENDERED
+  const MovieGenre = oneMovie?.Genre?.name;
+
+  const MovieCast = oneMovie?.Casts ?? [0];
+  console.log(MovieCast);
   useEffect(() => {
-    dispatch(fetchMovies(id));
+    dispatch(movieDetail(slug));
   }, []);
 
-  // if (loading) {
-  //   return (
-  //     <h1 className="text-center justify-content-center align-items-center">
-  //       Please wait, page is loading...
-  //     </h1>
-  //   );
-  // } else if (error) {
-  //   return (
-  //     <h1 className="text-center justify-content-center align-items-center">
-  //       Sorry, page cannot be loaded
-  //     </h1>
-  //   );
-  // }
+  if (loading) {
+    return (
+      <>
+        <Container
+          className="col-md-9 ms-sm-auto col-lg-10 px-md-4 "
+          style={{ minHeight: "100vh", transform: "scale(95%)" }}
+        >
+          >
+          <Container className="text-center mt-5 mb-3">
+            <h1>Loading the page...</h1>
+            <ClipLoader
+              color="#36d7b7"
+              size={100}
+              aria-label="Loading Spinner"
+            />
+          </Container>
+        </Container>
+      </>
+    );
+  }
 
   return (
     <>
-      <Container className="container-fluid">
+      <Container className="container-fluid ">
         <Container className="mt-3 mb-3" />
-        <Col className="mt-5" key={movies.id}>
-          <Card
-            className="justify-content-center h-100 p-3"
-            style={{ backgroundColor: "#546e7a" }}
-          >
-            <Row>
-              <Col className="col-5">
-                <Card.Img
-                  className="mb-3 d-flex align-items-center justify-content-center"
-                  variant="top"
-                  style={{ width: "20rem" }}
-                  src={movies.imageUrl}
-                />
+        <Col className="mt-5" key={oneMovie.id}>
+          <Row className="d-flex justify-content-center">
+            <Col className="col-4">
+              <Card.Img
+                className="mb-3 d-flex align-items-center justify-content-center"
+                variant="top"
+                style={{ width: "20rem" }}
+                src={oneMovie.imageUrl}
+              />
+            </Col>
 
-                <Row>
-                  <Col className="col-5 align-items-center justify-content-center">
-                    <h5>Where to watch:</h5>
-                  </Col>
-                  <Col className="col-7 align-items-center justify-content-center">
-                    <a href={movies.trailerUrl}>
-                      <AiFillYoutube />
-                    </a>
-                  </Col>
-                </Row>
-              </Col>
-
-              <Col className="col-7">
-                <Card.Body className="text-sm-center align-items-center d-flex justify-content-center flex-column">
-                  <Card.Title className="mb-2 align-items-center d-flex justify-content-center ">
-                    <h1>{movies.title}</h1>
-                  </Card.Title>
-                  <Card.Title className="mb-5 font-weight-light mb-0 align-items-center d-flex justify-content-center ">
-                    <h6>Rating: {movies.rating}</h6>
-                  </Card.Title>
-                  <Card.Title className="mt-5 font-weight-light mb-0 align-items-center d-flex justify-content-center ">
-                    <h5>{movies.synopsis}</h5>
-                  </Card.Title>
-                </Card.Body>
-              </Col>
-            </Row>
-          </Card>
+            <Col className="col-5">
+              <div className="box-body">
+                <h2>{oneMovie.title}</h2>
+                <p className="posted"> Rating: {oneMovie.rating}/10</p>
+                <p className="text">Genre: {MovieGenre}</p>
+                <p className="text">{oneMovie.synopsis}</p>
+                <div className="cl">&nbsp;</div>
+                <h3 style={{ color: "white" }}>TRAILER</h3>
+                <div>
+                  <iframe
+                    src={oneMovie.trailerUrl}
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              </div>
+            </Col>
+          </Row>
         </Col>
         <Container />
+        <Container>
+          <Row className="d-flex justify-content-center">
+            <h2 className="text-center">{movieDetail.title}</h2>
+            <h3 className="text-center">Cast List</h3>
+            <div
+              id="rowDetail"
+              className="row d-flex align-items-center justify-content-center"
+            >
+              {MovieCast.map((el) => {
+                return (
+                  <div
+                    className="card m-3 d-flex align-items-center justify-content-center"
+                    style={{ backgroundColor: "black", width: "13rem" }}
+                  >
+                    <img
+                      id="imgCast"
+                      className="p-2 d-flex align-items-center justify-content-center"
+                      src={el.profilePict}
+                      alt="Card image cap"
+                      variant="top"
+                      style={{ height: 300 }}
+                    />
+                    <div className="card-body">
+                      <h6 className="card-title text-light">{el.name}</h6>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </Row>
+        </Container>
       </Container>
     </>
   );

@@ -1,8 +1,16 @@
 import { Nav } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 export default function Sidebar() {
   const navigate = useNavigate();
+
+  const logOut = () => {
+    localStorage.clear();
+    Swal.fire("You have been logged out!");
+    navigate(`/login`);
+  };
+
   return (
     <nav
       id="sidebarMenu"
@@ -35,7 +43,11 @@ export default function Sidebar() {
             </Nav.Link>
           </li>
           <li className="nav-item">
-            <Nav.Link className="nav-link text-white small" href="#login">
+            <Nav.Link
+              onClick={() => logOut()}
+              className="nav-link text-white small"
+              href="#login"
+            >
               Sign Out
             </Nav.Link>
           </li>

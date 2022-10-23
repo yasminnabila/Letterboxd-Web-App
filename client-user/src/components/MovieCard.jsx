@@ -4,15 +4,14 @@ import { useNavigate } from "react-router-dom";
 function MovieCard({ movie }) {
   const navigate = useNavigate();
   const toMovieDetail = () => {
-    console.log("masuk detail");
-    navigate("/movies/" + movie.id);
+    navigate("/movies/" + movie.slug);
   };
 
   return (
     <Col className="mt-5" key={movie.id}>
       <Card
         className="justify-content-center h-100"
-        style={{ width: "10rem", backgroundColor: "#546e7a" }}
+        style={{ width: "10rem", height: "8rem", backgroundColor: "#546e7a" }}
         onClick={toMovieDetail}
       >
         <Card.Img
@@ -23,11 +22,8 @@ function MovieCard({ movie }) {
         />
 
         <Card.Body className="text-sm-center align-items-center d-flex justify-content-center flex-column">
-          {/* <Card.Title className="font-weight-light mb-0 align-items-center d-flex justify-content-center ">
+          {/* <Card.Title className="mb-0 align-items-center d-flex justify-content-center ">
             {movie.title}
-          </Card.Title>
-          <Card.Title className="font-weight-light mb-0 align-items-center d-flex justify-content-center ">
-            Rating: {movie.rating}
           </Card.Title> */}
           {/* <Button variant="dark">Detail</Button> */}
         </Card.Body>

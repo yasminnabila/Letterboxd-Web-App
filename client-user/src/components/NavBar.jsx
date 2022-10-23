@@ -20,18 +20,21 @@ function NavBar() {
             <Link to="/movies" className="nav-link text-white" href="#films">
               FILMS
             </Link>
-            <Nav.Link className="nav-list-link text-white small" href="#lists">
+            <Nav.Link
+              className="nav-list-link text-white small"
+              href="https://letterboxd.com/lists/"
+            >
               LISTS
             </Nav.Link>
             <Nav.Link
               className="nav-list-link text-white small"
-              href="#members"
+              href="https://letterboxd.com/members/"
             >
               MEMBERS
             </Nav.Link>
             <Nav.Link
               className="nav-list-link text-white small"
-              href="#journal"
+              href="https://letterboxd.com/journal/"
             >
               JOURNAL
             </Nav.Link>
