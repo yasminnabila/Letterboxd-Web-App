@@ -15,6 +15,22 @@ class movieController {
       next(error);
     }
   }
+
+  static async readOneMovie(req, res, next) {
+    try {
+      const { slug } = req.query;
+      console.log(req.query, "INI QUERYYYYYY");
+      const data = await Movie.findOne({
+        where: {
+          slug,
+        },
+        include: [Genre, Cast],
+      });
+      res.status(200).json(data);
+    } catch (error) {
+      next(error);
+    }
+  }
 }
 
 module.exports = movieController;
