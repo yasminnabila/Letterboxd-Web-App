@@ -93,10 +93,11 @@ class movieController {
         name1,
         name2,
         name3,
-        pict1,
-        pict2,
-        pict3,
+        profilePict1,
+        profilePict2,
+        profilePict3,
       } = req.body;
+
       const createMovie = await Movie.create(
         {
           title,
@@ -111,22 +112,102 @@ class movieController {
           transaction: t,
         }
       );
-      const createimage = await Cast.bulkCreate(
+
+      await Cast.bulkCreate(
         [
-          { MovieId: createMovie.id, name: name1, profilePict: pict1 },
-          { MovieId: createMovie.id, name: name2, profilePict: pict2 },
-          { MovieId: createMovie.id, name: name3, profilePict: pict3 },
+          { MovieId: createMovie.id, name: name1, profilePict: profilePict1 },
+          { MovieId: createMovie.id, name: name2, profilePict: profilePict2 },
+          { MovieId: createMovie.id, name: name3, profilePict: profilePict3 },
         ],
         { transaction: t }
       );
       await t.commit();
       res.status(201).json({
+        statusCode: 201,
         message: "Movie is created successfully",
       });
     } catch (error) {
       console.log(error);
       next(error);
-      t.rollback();
+      await t.rollback();
+    }
+  }
+
+  static async updateMovie(req, res, next) {
+    const t = await sequelize.transaction();
+    try {
+      const UserId = req.user.id;
+      const id = req.params.id;
+      const {
+        title,
+        synopsis,
+        trailerUrl,
+        imageUrl,
+        rating,
+        GenreId,
+        name1,
+        name2,
+        name3,
+        profilePict1,
+        profilePict2,
+        profilePict3,
+      } = req.body;
+
+      const data = await Movie.update(
+        {
+          title,
+          synopsis,
+          trailerUrl,
+          imageUrl,
+          rating: +rating,
+          GenreId: +GenreId,
+          UserId: +UserId,
+        },
+        {
+          where: {
+            id,
+          },
+          individualHooks: true,
+        },
+        {
+          transaction: t,
+        }
+      );
+
+      if (!data) {
+        throw {
+          code: 404,
+          msg: "Movie not found",
+        };
+      }
+
+      await Cast.destroy(
+        {
+          where: {
+            MovieId: id,
+          },
+        },
+        {
+          transaction: t,
+        }
+      );
+
+      await Cast.bulkCreate(
+        [
+          { MovieId: id, name: name1, profilePict: profilePict1 },
+          { MovieId: id, name: name2, profilePict: profilePict2 },
+          { MovieId: id, name: name3, profilePict: profilePict3 },
+        ],
+        { transaction: t }
+      );
+      await t.commit();
+      res.status(200).json({
+        statusCode: 200,
+        message: "Movie has been updated",
+      });
+    } catch (error) {
+      next(error);
+      await t.rollback();
     }
   }
 }
