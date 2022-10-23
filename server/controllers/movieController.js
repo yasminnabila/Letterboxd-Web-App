@@ -203,11 +203,36 @@ class movieController {
       await t.commit();
       res.status(200).json({
         statusCode: 200,
-        message: "Movie has been updated",
+        message: "Movie is updated successfully",
       });
     } catch (error) {
       next(error);
       await t.rollback();
+    }
+  }
+
+  static async deleteMovieById(req, res, next) {
+    try {
+      const { id } = req.params;
+      const data = await Movie.destroy({
+        where: {
+          id,
+        },
+      });
+
+      if (!data) {
+        throw {
+          code: 404,
+          msg: "Movie not found",
+        };
+      }
+
+      res.status(200).json({
+        statusCode: 200,
+        message: `${data.title} is deleted successfully`,
+      });
+    } catch (error) {
+      next(error);
     }
   }
 }
