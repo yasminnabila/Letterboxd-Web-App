@@ -17,15 +17,6 @@ function NavBar() {
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end align-items-center">
           <Nav className="justify-content-center">
-            <Nav.Link className="nav-list-link text-white small" href="#login">
-              SIGN IN
-            </Nav.Link>
-            <Nav.Link
-              className="nav-list-link text-white small"
-              href="#register"
-            >
-              CREATE ACCOUNT
-            </Nav.Link>
             <Link to="/movies" className="nav-link text-white" href="#films">
               FILMS
             </Link>

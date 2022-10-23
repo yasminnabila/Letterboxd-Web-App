@@ -1,34 +1,16 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Layout from "./layout/Layout";
-import Home from "./pages/Home";
-import MovieList from "./pages/MovieList";
-import MovieDetail from "./pages/MovieDetail";
+import { RouterProvider } from "react-router-dom";
+import { Provider as ReduxProvider } from "react-redux";
+import store from "./store";
+import router from "./router";
 
 function App() {
-  const router = createBrowserRouter([
-    {
-      element: <Layout />,
-      children: [
-        {
-          path: "/",
-          element: <Home />,
-        },
-        {
-          path: "/movies",
-          element: <MovieList />,
-        },
-        {
-          path: "/movies/:id",
-          element: <MovieDetail />,
-        },
-      ],
-    },
-  ]);
   return (
     <div className="App">
-      <RouterProvider router={router} />
+      <ReduxProvider store={store}>
+        <RouterProvider router={router} />
+      </ReduxProvider>
     </div>
   );
 }
