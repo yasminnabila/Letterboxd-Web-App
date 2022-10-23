@@ -14,9 +14,12 @@ function EditMovie() {
   });
 
   const { movieDetail } = useSelector((state) => {
-    console.log(state, "INI MOVIE DETAIL KAK<<<<<");
+    // console.log(state, "INI MOVIE DETAIL KAK<<<<<");
     return state.moviesReducer;
   });
+
+  const MovieCast = movieDetail?.Casts ?? [0];
+  // console.log(MovieCast[0]?.profilePict, "<<<<<");
 
   useEffect(() => {
     dispatch(fetchGenres());
@@ -28,12 +31,12 @@ function EditMovie() {
       GenreId: movieDetail.GenreId,
       imageUrl: movieDetail.imageUrl,
       trailerUrl: movieDetail.trailerUrl,
-      profilePict1: movieDetail.profilePict1,
-      profilePict2: movieDetail.profilePict2,
-      profilePict3: movieDetail.profilePict3,
-      name1: movieDetail.name1,
-      name2: movieDetail.name2,
-      name3: movieDetail.name3,
+      profilePict1: MovieCast[0]?.profilePict,
+      profilePict2: MovieCast[1]?.profilePict,
+      profilePict3: MovieCast[2]?.profilePict,
+      name1: MovieCast[0]?.name,
+      name2: MovieCast[1]?.name,
+      name3: MovieCast[2]?.name,
     });
   }, [movieDetail]);
 
