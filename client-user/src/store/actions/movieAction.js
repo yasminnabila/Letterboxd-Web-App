@@ -24,7 +24,7 @@ export function fetchMovies() {
     try {
       const response = await fetch(BASE_URL + `/public`, {
         headers: {
-          access_token: localStorage.getItem("access_token"),
+          "Content-Type": "application/json",
         },
       });
 
@@ -41,19 +41,19 @@ export function fetchMovies() {
   };
 }
 
-export const movieDetail = (slug) => {
+export const movieDetail = (id) => {
   return async (dispatch) => {
     try {
-      let response = await fetch(BASE_URL + `/public/detail?slug=${slug}`, {
+      let response = await fetch(BASE_URL + `/public/${id}`, {
         headers: {
-          access_token: localStorage.getItem("access_token"),
+          "Content-Type": "application/json",
         },
       });
 
       if (!response.ok) {
-        response = await response.json();
-        throw response.message;
+        throw new Error(`Something's wrong!`);
       }
+
       const data = await response.json();
       dispatch(setMovieDetail(data));
     } catch (err) {

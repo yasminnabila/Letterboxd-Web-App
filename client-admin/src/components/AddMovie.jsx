@@ -37,30 +37,10 @@ function AddMovie() {
       [name]: value,
     });
   };
-  //   const [title, settitle] = useState("");
-  //   const [rating, setRating] = useState("");
-  //   const [synopsis, setSynopsis] = useState("");
-  //   const [genreId, setGenreId] = useState("");
-  //   const [imageUrl, setImageUrl] = useState("");
-  //   const [trailerUrl, setTrailerUrl] = useState("");
 
   useEffect(() => {
     dispatch(fetchGenres());
   }, []);
-
-  //   useEffect(() => {
-  //     if(movies){
-  //         setForm({
-  //             title: movie.title
-  //         })
-  //     }
-  //   }, [movie])
-
-  //   useEffect(() => {
-  //     if (genres.length > 0) {
-  //       setForm(genres[0].id);
-  //     }
-  //   }, [genres]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
