@@ -34,6 +34,9 @@ function Login() {
       let data = await response.json();
       if (data.err) throw data.message;
       localStorage.setItem("access_token", data.access_token);
+      localStorage.setItem("id", data.id);
+      localStorage.setItem("email", data.email);
+      localStorage.setItem("username", data.username);
       navigate("/");
       Swal.fire({
         position: "center",

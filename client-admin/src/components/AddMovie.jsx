@@ -18,10 +18,15 @@ function AddMovie() {
     title: "",
     rating: "",
     synopsis: "",
-    genreId: "",
-    authorId: 1,
+    GenreId: "",
     imageUrl: "",
     trailerUrl: "",
+    profilePict1: "",
+    profilePict2: "",
+    profilePict3: "",
+    name1: "",
+    name2: "",
+    name3: "",
   });
 
   const handleChange = (event) => {
@@ -43,13 +48,13 @@ function AddMovie() {
     dispatch(fetchGenres());
   }, []);
 
-//   useEffect(() => {
-//     if(movies){
-//         setForm({
-//             title: movie.title
-//         })
-//     }
-//   }, [movie])
+  //   useEffect(() => {
+  //     if(movies){
+  //         setForm({
+  //             title: movie.title
+  //         })
+  //     }
+  //   }, [movie])
 
   //   useEffect(() => {
   //     if (genres.length > 0) {
@@ -118,8 +123,8 @@ function AddMovie() {
                 <Form.Label>Genre</Form.Label>
 
                 <Form.Select
-                  name="genreId"
-                  value={form.genreId}
+                  name="GenreId"
+                  value={form.GenreId}
                   onChange={handleChange}
                 >
                   {genres.map((el, index) => {
@@ -155,6 +160,71 @@ function AddMovie() {
                   placeholder="https://youtu.be/tBfgTZsBeFM"
                 />
               </Form.Group>
+
+              {/* CAST PHOTO & NAME */}
+              <Row>
+                <Form.Group
+                  as={Col}
+                  className="mb-3"
+                  controlId="formGridAddress1"
+                >
+                  <Form.Label>Cast Name</Form.Label>
+                  <Form.Control
+                    name="name1"
+                    value={form.name1}
+                    onChange={handleChange}
+                    type="text"
+                    placeholder="Input cast name here"
+                  />
+                  <br />
+                  <Form.Control
+                    name="name2"
+                    value={form.name2}
+                    onChange={handleChange}
+                    type="text"
+                    placeholder="Input cast name here"
+                  />
+                  <br />
+                  <Form.Control
+                    name="name3"
+                    value={form.name3}
+                    onChange={handleChange}
+                    type="text"
+                    placeholder="Input cast name here"
+                  />
+                </Form.Group>
+                <Form.Group
+                  as={Col}
+                  className="mb-3"
+                  controlId="formGridAddress1"
+                >
+                  <Form.Label>Cast Photo</Form.Label>
+                  <Form.Control
+                    name="profilePict1"
+                    value={form.profilePict1}
+                    onChange={handleChange}
+                    type="text"
+                    placeholder="Input cast image url here"
+                  />
+                  <br />
+                  <Form.Control
+                    name="profilePict2"
+                    value={form.profilePpict2}
+                    onChange={handleChange}
+                    type="text"
+                    placeholder="Input cast image url here"
+                  />
+                  <br />
+                  <Form.Control
+                    name="profilePict3"
+                    value={form.profilePict3}
+                    onChange={handleChange}
+                    type="text"
+                    placeholder="IInput cast image url here"
+                  />
+                  <br />
+                </Form.Group>
+              </Row>
 
               <Button variant="primary" type="submit">
                 Submit

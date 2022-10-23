@@ -1,4 +1,5 @@
 import { SET_MOVIES, BASE_URL } from "../actionTypes/actionTypes";
+import Swal from "sweetalert2";
 
 export function setMovies(data) {
   return {
@@ -10,9 +11,11 @@ export function setMovies(data) {
 export function fetchMovies() {
   return async (dispatch) => {
     try {
-      const response = await fetch(
-        BASE_URL + `/movies`
-      );
+      const response = await fetch(BASE_URL + `/movies`, {
+        headers: {
+          access_token: localStorage.getItem("access_token"),
+        },
+      });
 
       if (!response.ok) {
         throw new Error(`Something's wrong!`);
@@ -22,29 +25,61 @@ export function fetchMovies() {
 
       dispatch(setMovies(movies));
     } catch (error) {
-      console.log(error);
+      errorSwal(error);
     }
   };
 }
 
 export function createMovie(movie) {
-  return async function (dispatch) {
+  return async (dispatch) => {
     try {
-      const response = await fetch(BASE_URL + `/movies`, {
+      let response = await fetch(BASE_URL + `/movies`, {
         method: "POST",
         body: JSON.stringify(movie),
         headers: {
+          access_token: localStorage.getItem("access_token"),
           "Content-Type": "application/json",
         },
       });
 
       if (!response.ok) {
-        throw new Error(`Movie is failed to add`);
+        response = await response.json();
+        throw response.message;
       }
-      const data = await response.json();
-      console.log(data);
+      successSwal("New movie is created successfully");
+      dispatch(fetchMovies());
     } catch (error) {
-      console.log(error);
+      errorSwal(error);
     }
   };
 }
+
+function successSwal(message) {
+  Swal.fire({
+    position: "center",
+    icon: "success",
+    title: message,
+    showConfirmButton: false,
+    timer: 1500,
+  });
+}
+
+function errorSwal(msg) {
+  Swal.fire({
+    icon: "error",
+    title: "Oops...",
+    text: "Something went wrong!",
+  });
+}
+
+// function confirmSwal() {
+//   return Swal.fire({
+//     title: "Are you sure?",
+//     text: "You won't be able to revert this!",
+//     icon: "warning",
+//     showCancelButton: true,
+//     confirmButtonColor: "#3085d6",
+//     cancelButtonColor: "#d33",
+//     confirmButtonText: "Yes, I'm sure!",
+//   });
+// }
