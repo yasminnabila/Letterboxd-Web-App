@@ -11,7 +11,7 @@ class publicController {
       next(error);
     }
   }
-  static async readOneMovie(req, res, next) {
+  static async readOneMovieBySlug(req, res, next) {
     try {
       const { slug } = req.query;
       const data = await Movie.findOne({
