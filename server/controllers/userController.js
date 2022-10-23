@@ -49,6 +49,13 @@ class userController {
           msg: "Invalid email/ password",
         };
       }
+
+      if (foundUser.role === "Customer") {
+        throw {
+          code: 403,
+          msg: "Customer has no access",
+        };
+      }
       const comparePassword = compareHashedPassword(
         foundUser.password,
         password

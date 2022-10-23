@@ -72,7 +72,7 @@ const AuthorizationDelete = async (req, res, next) => {
       if (data.UserId !== id) {
          throw {
            code: 403,
-           msg: "Staff is not allowed to do this action",
+           msg: "Admin access only",
          };
       }
     }

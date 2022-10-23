@@ -8,7 +8,6 @@ class publicController {
       });
       res.status(200).json(data);
     } catch (error) {
-      console.log(error);
       next(error);
     }
   }
@@ -24,7 +23,6 @@ class publicController {
       });
       res.status(200).json(data);
     } catch (error) {
-      console.log(error);
       next(error);
     }
   }
