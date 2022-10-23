@@ -19,7 +19,6 @@ class movieController {
   static async readOneMovieBySlug(req, res, next) {
     try {
       const { slug } = req.query;
-      console.log(req.query, "INI QUERYYYYYY");
       const data = await Movie.findOne({
         where: {
           slug,
@@ -44,11 +43,21 @@ class movieController {
       if (!data) {
         throw {
           code: 404,
-          name: "Movie not found",
+          msg: "Movie not found",
         };
       }
       res.status(200).json(data);
     } catch (error) {
+      next(error);
+    }
+  }
+
+  static async readAllGenres(req, res, next) {
+    try {
+      const data = await Genre.findAll({});
+      res.status(200).json(data);
+    } catch (error) {
+      console.log(error);
       next(error);
     }
   }

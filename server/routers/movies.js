@@ -3,6 +3,7 @@ const movieController = require("../controllers/movieController");
 
 router.get("/", movieController.readAllMovies);
 router.get("/detail", movieController.readOneMovieBySlug);
+router.get("/genres", movieController.readAllGenres);
 router.get("/:id", movieController.readOneMovieById);
 
 module.exports = router;
