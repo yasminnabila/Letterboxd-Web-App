@@ -64,7 +64,7 @@ function successSwal(message) {
   });
 }
 
-function errorSwal(msg) {
+function errorSwal(message) {
   Swal.fire({
     icon: "error",
     title: "Oops...",

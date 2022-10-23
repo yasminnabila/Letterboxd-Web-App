@@ -1,20 +1,14 @@
 import { useDispatch } from "react-redux";
-import { fetchGenres } from "../store/actions/genresAction";
+import { deleteGenre } from "../store/actions/genresAction";
 
 export default function RowsGenre(props) {
   const dispatch = useDispatch();
-  const handleDelete = (id) => {
-    fetch("http://localhost:3000/admin/categories/" + id, {
-      method: `DELETE`,
-      // headers: {
-      //   access_token: localStorage.getItem(`access_token`),
-      // },
-    }).then(() => dispatch(fetchGenres()));
+  const handleDelete = async () => {
+    dispatch(deleteGenre(id));
   };
-  const {
-    no,
-    genre: { name, createdAt, updatedAt },
-  } = props;
+  const { no, genre } = props;
+  const { name, createdAt, updatedAt, id } = genre;
+
   return (
     <tr>
       <th className="align-middle">{no + 1}</th>
@@ -26,10 +20,7 @@ export default function RowsGenre(props) {
         <i className="align-middle">{updatedAt}</i>
       </td>
       <td className="align-middle">
-        <button
-          onClick={() => handleDelete(id)}
-          className="btn btn-dark align-middle"
-        >
+        <button onClick={handleDelete} className="btn btn-dark align-middle">
           Delete
         </button>
       </td>

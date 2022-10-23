@@ -54,24 +54,28 @@ export function createGenre(genre) {
   };
 }
 
-export const deleteGenre = (id) => {
-  console.log(id);
-  return async (dispatch) => {
+export function deleteGenre(id) {
+  return (dispatch) => {
     try {
-      await fetch(BASE_URL + "/categories/" + id, {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-          // access_token: localStorage.getItem(`access_token`),
-        },
-        // body: JSON.stringify(id)
+      confirmSwal().then(async (result) => {
+        if (result.isConfirmed) {
+          let response = await fetch(BASE_URL + `/movies/genres/${id}`, {
+            method: "DELETE",
+            headers: { access_token: localStorage.getItem("access_token") },
+          });
+          if (!response.ok) {
+            throw new Error("Internal Server Error");
+          }
+          Swal.fire("Deleted!", "Genre is deleted successfully", "success");
+          dispatch(fetchGenres());
+        }
       });
-      dispatch(fetchGenres());
-    } catch (error) {
-      console.log(error);
+    } catch (err) {
+      console.log(err);
+      errorSwal(err);
     }
   };
-};
+}
 
 function successSwal(message) {
   Swal.fire({
@@ -83,7 +87,7 @@ function successSwal(message) {
   });
 }
 
-function errorSwal(msg) {
+function errorSwal(message) {
   Swal.fire({
     icon: "error",
     title: "Oops...",
@@ -91,14 +95,14 @@ function errorSwal(msg) {
   });
 }
 
-// function confirmSwal() {
-//   return Swal.fire({
-//     title: "Are you sure?",
-//     text: "You won't be able to revert this!",
-//     icon: "warning",
-//     showCancelButton: true,
-//     confirmButtonColor: "#3085d6",
-//     cancelButtonColor: "#d33",
-//     confirmButtonText: "Yes, I'm sure!",
-//   });
-// }
+function confirmSwal() {
+  return Swal.fire({
+    title: "Are you sure?",
+    text: "You won't be able to revert this!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, I'm sure!",
+  });
+}
