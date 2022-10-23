@@ -10,7 +10,7 @@ export function setGenres(data) {
 export function fetchGenres() {
   return async (dispatch) => {
     try {
-      const response = await fetch("http://localhost:4000/genres");
+      const response = await fetch(BASE_URL + `/movies/genres`);
 
       if (!response.ok) {
         throw new Error(`Something's wrong!`);
@@ -41,7 +41,7 @@ export function createGenre(genre) {
       }
       // const data = await response.json();
       // console.log(data);
-      dispatch(fetchGenres())
+      dispatch(fetchGenres());
     } catch (error) {
       console.log(error);
     }
