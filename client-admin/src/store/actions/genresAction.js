@@ -71,7 +71,6 @@ export function deleteGenre(id) {
         }
       });
     } catch (err) {
-      console.log(err);
       errorSwal(err);
     }
   };

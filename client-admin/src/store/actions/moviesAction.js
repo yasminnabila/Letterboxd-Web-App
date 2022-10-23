@@ -54,6 +54,28 @@ export function createMovie(movie) {
   };
 }
 
+export function deleteMovie(id) {
+  return (dispatch) => {
+    try {
+      confirmSwal().then(async (result) => {
+        if (result.isConfirmed) {
+          let response = await fetch(BASE_URL + `/movies/${id}`, {
+            method: "DELETE",
+            headers: { access_token: localStorage.getItem("access_token") },
+          });
+          if (!response.ok) {
+            throw new Error("Internal Server Error");
+          }
+          Swal.fire("Deleted!", "Movie is deleted successfully", "success");
+          dispatch(fetchMovies());
+        }
+      });
+    } catch (err) {
+      errorSwal(err);
+    }
+  };
+}
+
 function successSwal(message) {
   Swal.fire({
     position: "center",
@@ -72,14 +94,14 @@ function errorSwal(message) {
   });
 }
 
-// function confirmSwal() {
-//   return Swal.fire({
-//     title: "Are you sure?",
-//     text: "You won't be able to revert this!",
-//     icon: "warning",
-//     showCancelButton: true,
-//     confirmButtonColor: "#3085d6",
-//     cancelButtonColor: "#d33",
-//     confirmButtonText: "Yes, I'm sure!",
-//   });
-// }
+function confirmSwal() {
+  return Swal.fire({
+    title: "Are you sure?",
+    text: "You won't be able to revert this!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, I'm sure!",
+  });
+}
