@@ -1,9 +1,20 @@
-import { SET_MOVIES, BASE_URL } from "../actionTypes/actionTypes";
+import {
+  SET_MOVIES,
+  SET_MOVIE_DETAIL,
+  BASE_URL,
+} from "../actionTypes/actionTypes";
 import Swal from "sweetalert2";
 
 export function setMovies(data) {
   return {
     type: SET_MOVIES,
+    payload: data,
+  };
+}
+
+export function setMovieDetail(data) {
+  return {
+    type: SET_MOVIE_DETAIL,
     payload: data,
   };
 }
@@ -75,6 +86,50 @@ export function deleteMovie(id) {
     }
   };
 }
+
+export function updateMovie(movie, id) {
+  return async (dispatch) => {
+    try {
+      let response = await fetch(BASE_URL + `/movies/${id}`, {
+        method: "PUT",
+        headers: {
+          access_token: localStorage.getItem("access_token"),
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(movie),
+      });
+      if (!response.ok) {
+        response = await response.json();
+        throw response.message;
+      }
+      successSwal("Movie is updated successfully");
+      dispatch(fetchMovies());
+    } catch (err) {
+      errorSwal(err);
+    }
+  };
+}
+
+export const movieDetail = (id) => {
+  return async (dispatch) => {
+    try {
+      let response = await fetch(BASE_URL + `/movies/${id}`, {
+        headers: {
+          access_token: localStorage.getItem("access_token"),
+        },
+      });
+
+      if (!response.ok) {
+        response = await response.json();
+        throw response.message;
+      }
+      const data = await response.json();
+      dispatch(setMovieDetail(data));
+    } catch (err) {
+      errorSwal(err);
+    }
+  };
+};
 
 function successSwal(message) {
   Swal.fire({

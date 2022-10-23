@@ -200,6 +200,7 @@ class movieController {
         message: "Movie is updated successfully",
       });
     } catch (error) {
+      console.log(error);
       next(error);
       await t.rollback();
     }

@@ -1,7 +1,8 @@
-import { SET_MOVIES } from "../actionTypes/actionTypes";
+import { SET_MOVIES, SET_MOVIE_DETAIL } from "../actionTypes/actionTypes";
 
 const initialState = {
   movies: [],
+  movieDetail: [],
 };
 
 function moviesReducer(state = initialState, action) {
@@ -10,6 +11,11 @@ function moviesReducer(state = initialState, action) {
       return {
         ...state,
         movies: action.payload,
+      };
+    case SET_MOVIE_DETAIL:
+      return {
+        ...state,
+        movieDetail: action.payload,
       };
     default:
       return state;
