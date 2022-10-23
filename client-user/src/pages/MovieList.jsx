@@ -4,9 +4,10 @@ import { Container, Row } from "react-bootstrap";
 import React from "react";
 import MovieCard from "../components/MovieCard";
 import { fetchMovies } from "../store/actions/movieAction";
+import ClipLoader from "react-spinners/ClipLoader";
 
 function MovieList() {
-  const { movies } = useSelector((state) => {
+  const { movies, loading } = useSelector((state) => {
     console.log(state, "<<<");
     return state;
   });
@@ -14,6 +15,27 @@ function MovieList() {
   useEffect(() => {
     dispatch(fetchMovies());
   }, []);
+
+  if (loading) {
+    return (
+      <>
+        <Container
+          className="col-md-9 ms-sm-auto col-lg-10 px-md-4 "
+          style={{ minHeight: "100vh", transform: "scale(95%)" }}
+        >
+          >
+          <Container className="text-center mt-5 mb-3">
+            <h1>Loading the page...</h1>
+            <ClipLoader
+              color="#36d7b7"
+              size={100}
+              aria-label="Loading Spinner"
+            />
+          </Container>
+        </Container>
+      </>
+    );
+  }
 
   return (
     <Container>

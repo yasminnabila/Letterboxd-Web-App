@@ -52,7 +52,7 @@ function MovieDetail() {
               <Card.Img
                 className="mb-3 d-flex align-items-center justify-content-center"
                 variant="top"
-                style={{ width: "20rem" }}
+                style={{ width: "22rem" }}
                 src={oneMovie.imageUrl}
               />
             </Col>
@@ -64,7 +64,7 @@ function MovieDetail() {
                 <p className="text">Genre: {MovieGenre}</p>
                 <p className="text">{oneMovie.synopsis}</p>
                 <div className="cl">&nbsp;</div>
-                <h3 style={{ color: "white" }}>TRAILER</h3>
+                <h4 style={{ color: "white" }}>Trailer</h4>
                 <div>
                   <iframe
                     src={oneMovie.trailerUrl}
