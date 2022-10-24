@@ -78,7 +78,6 @@ function EditMovie() {
           className="col-md-9 ms-sm-auto col-lg-10 px-md-4 "
           style={{ minHeight: "100vh", transform: "scale(95%)" }}
         >
-          >
           <Container className="text-center mt-5 mb-3">
             <h1>Loading the page...</h1>
             <ClipLoader

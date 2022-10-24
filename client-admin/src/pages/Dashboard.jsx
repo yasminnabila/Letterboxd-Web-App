@@ -35,7 +35,7 @@ export default function Dashboard() {
           "Genre",
           "Rating",
           "Created By",
-          "Main Image",
+          "Poster",
           "Casts",
           "Actions",
         ]}
