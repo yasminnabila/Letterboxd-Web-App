@@ -8,10 +8,6 @@ function AddGenre() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  // const { genres } = useSelector((state) => {
-  //   return state.genresReducer;
-  // });
-
   const [form, setForm] = useState({
     name: "",
     createdAt: "2022-10-17 13:49:47.388+07",
@@ -33,8 +29,6 @@ function AddGenre() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // console.log(form, "<<<<<<<");
-    // return
     dispatch(createGenre(form)).then(() => {
       navigate("/genre");
     });
