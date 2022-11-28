@@ -1,93 +1,53 @@
-# P3-Challenge-1
+# Letterboxd Clone (Client and Customer Web App)
 
-- Tema Aplikasi: Movie Synopsis
-- CSS Framework: Bootstrap
+This is a web application based on Letterboxd, uses primarly JavaScript both on the frontend and backend. Data about movies and casts are stored on local storage deployed on Heroku.  This is a personal project which also a part of my coding bootcamp assignment, where we started exploring ReactJS. Therefore, it's not meant as any infringement on Letterboxd's copyright or original design.
 
-Struktur Folder:
+## Key Features
 
-- server (PORT: 3000)
-- client-user
-- client-admin
+### Admin Web App
+The admin side is used as a CMS (Content Management System) where a registered admin has access to:
+* Read list of movies and/or genres
+* Read movie details containing cast name and images
+* Create new list of movies and/or genres
+* Edit movies
+* Delete movies and/or genres
+* Register new admin
 
-## W1D1
+### Customer Web App
+The customer side allows non-logged in user to see all list of movies and see each movie in detail.
 
-Target:
+## Demo
 
-- [✅] Lecture - React Intro
-- [✅] React: Class Component vs Function Component
-- [✅] Mempelajari State menggunakan useState
-- [✅] Mengirim Props baik berupa sebuah state atau function
-- [✅] Event Handling (onClick, onChange, onSubmit)
-- [✅] Conditional Rendering di dalam React
-- [✅] Looping List of Data di dalam React
-- [✅] Lifecycle component menggunakan useEffect
-- [✅] Membuat server (json-server)
-- [✅] Membuat react app untuk client-user (Styling)
-- [✅] Membuat react app untuk client-admin (CRUD)
-- [✅] Menentukan Thema Aplikasi
-- [✅] Menentukan Design dan pemilihan CSS Framework
+### Admin Web App
+Here is a working live demo for the [_admin web app_](https://letterboxd-project-cms.web.app/). 
+Login details:
+- E-mail: admin@outlook.com
+- Password: 12345
 
-**Report:**
+https://user-images.githubusercontent.com/108170309/204271802-31f4ff94-dcdc-4b0d-bc58-d78998c020c3.mp4
 
-- Hari ini saya belajar React component juga cara menggunakan local state, event handling, serta menampilkan render data di client. Selain itu, saya juga belajar cara menggunakan server dummy menggunakan JSONserver.
-- Pada challenge ini, saya memilih tema 'Movie' dengan referensi dari website Letterboxd. Saya juga akan menggunakan CSS framework, yaitu Bootstrap
-- Progress challenge hari, ini saya mulai membuat component-component yang dibutuhkan untuk client-side user serta belajar menggunakan react-bootstrap
+### Customer Web App
+Here is a working live demo for the [_customer web app_](https://letterboxd-project-client.web.app/).
+User does not need to log in into any account.
 
-## W1D2
+https://user-images.githubusercontent.com/108170309/204273119-bcae6a43-5b94-4ee5-8397-fddf1035eea3.mp4
 
-Target:
+## Stack
 
-- [✅] Lecture - Custom Hooks
-- [✅] Rules of Hooks
-- [✅] Lecture - React-Router
-- [✅] Membuat router user-side (min: home, detail)
-- [✅] Membuat router admin-side (min: login, add admin, CRUD main entitas, CRUD another entitas)
-- [✅] Membuat privateRoute untuk admin
+### Frontend
+* [React](https://reactjs.org/) to compose the UI
+* [React Router](https://reactrouter.com/) to manage the routes
+* [React Redux](https://react-redux.js.org/) to manage and update application state
+* [Bootstrap CSS](https://react-bootstrap.github.io/) to help with the styling and accessibility
+* [Vite](https://vitejs.dev/) to improve bundling and development
 
-**Report:**
+### Backend
+* [NodeJS](https://nodejs.org/en/) to run the server
+* [Express JS](http://expressjs.com/) to manage HTTP requests and responses
+* [PostgreSQL](https://www.postgresql.org/) server to manage the data fetching declaratively
 
-- Hari ini saya belajar mengenai Hooks dan React-Router
-- Progress challenge hari ini, saya masih melanjutkan setup layout user. Saya juga sudah berhasil fetch data menggunakan hooks bernama fetchMovie dengan lifecycle useEffect
-
-## W1D3
-
-Target:
-
-- [✅] Lecture - Redux
-- [✅] State vs Global State
-- [✅] Bagaimana cara membuat Store
-- [✅] Bagaimana cara membuat Reducer
-- [✅] Bagaimana cara membuat Action
-- [✅] Membuat Action Creators
-- [✅] Membuat Action Types
-- [✅] Lecture - Redux-thunk (handle async)
-- [✅] Cara menggunakan combineReducers
-
-**Report:**
-
-- Hari ini saya belajar Redux dan membuat global state
-- Progress challenge hari ini, saya masih melanjutkan layouting serta belajar menggunakan router link di NavBar untuk navigasi antar pages.
-
-## W1D4
-
-Target:
-
-- [✅] Lecture - SQL Advance DQL
-- [✅] Membuat server mengguanakan express.js, postgreSQL dan Sequelize
-- [✅] Menentukan associations antar tables
-- [✅] Lecture - SQL Transaction
-- [✅] Membuat transaction saat membuat entitas baru pada main table. Pastikan ada assosiasi di dalamnya
-
-**Report:**
-- Hari ini saya belajar mengenai advance SQL
-- Progress challenge hari ini, saya sudah memulai layouting serta menambahkan fungsional seperti event handling untuk navigasi dan penambahan entitas. Selain itu, saya sudah mulai mengaplikasikan react redux di admin-side.
-
-## W1D5
-
-Target:
-
-- [✅] LC Simulation
-- [✅] Practice, Practice, Practice
-
-**Report:**
-- Progress challenge hari, saya belajar untuk add dan edit entitas utama serta entitas ketiga.
+## To-do(s)
+Since this is in an early stage of development, the customer side web-app is still missing the following features:
+* Add register & sign in feature so that only logged in user can access the app
+* No search features exist
+* Feature for users to rate and review movies that they've seen just like original Letterboxd
