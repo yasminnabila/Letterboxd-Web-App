@@ -53,8 +53,10 @@ https://user-images.githubusercontent.com/108170309/204289528-8b3f3990-9e1b-4358
 
 ### Backend
 * [NodeJS](https://nodejs.org/en/) to run the server
-* [Express JS](http://expressjs.com/) to manage HTTP requests and responses
+* [Express JS](https://expressjs.com/) to provide MVC in web app design
+* [Fetch API]([http://expressjs.com/](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)) to manage HTTP requests and responses
 * [PostgreSQL](https://www.postgresql.org/) server to manage the data fetching declaratively
+* [Heroku](https://herokuapp.com/) to deploy the app 
 
 ## To-do(s)
 Since this is in an early stage of development, the customer side web-app is still missing the following features:
