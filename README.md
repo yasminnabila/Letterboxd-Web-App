@@ -16,6 +16,15 @@ The admin side is used as a CMS (Content Management System) where a registered a
 ### Customer Web App
 The customer side allows non-logged in user to see all list of movies and see each movie in detail.
 
+## Motivation
+
+It is a work in progress, however this project displays:
+* The ability to write JSX in both functional and class components
+* Multiple fetch calls in different components
+* Manipulating dynamically added elements to the page
+* Event + Error handling
+* Creating, updating, and setting information to a local database
+
 ## Demo
 
 ### Admin Web App
@@ -39,7 +48,8 @@ https://user-images.githubusercontent.com/108170309/204273119-bcae6a43-5b94-4ee5
 * [React](https://reactjs.org/) to compose the UI
 * [React Router](https://reactrouter.com/) to manage the routes
 * [React Redux](https://react-redux.js.org/) to manage and update application state
-* [Bootstrap CSS](https://react-bootstrap.github.io/) to help with the styling and accessibility
+* [Bootstrapped](https://react-bootstrap.github.io/) using [create react app](https://github.com/facebook/create-react-app) to help with the styling and accessibility
+* [Firebase](https://firebase.google.com/) to host the deployed app
 * [Vite](https://vitejs.dev/) to improve bundling and development
 
 ### Backend
