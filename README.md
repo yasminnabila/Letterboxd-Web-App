@@ -33,13 +33,12 @@ Login details:
 - E-mail: admin@outlook.com
 - Password: 12345
 
-https://user-images.githubusercontent.com/108170309/204271802-31f4ff94-dcdc-4b0d-bc58-d78998c020c3.mp4
+https://user-images.githubusercontent.com/108170309/204289440-9f4f0f02-69a8-4af6-b5a7-455d00d4b295.mp4
 
 ### Customer Web App
-Here is a working live demo for the [_customer web app_](https://letterboxd-project-client.web.app/).
-User does not need to log in into any account.
+Here is a working live demo for the [_customer web app_](https://letterboxd-project-client.web.app/) (no sign in required).
 
-https://user-images.githubusercontent.com/108170309/204273119-bcae6a43-5b94-4ee5-8397-fddf1035eea3.mp4
+https://user-images.githubusercontent.com/108170309/204289528-8b3f3990-9e1b-4358-8485-edcd83ecc5ce.mp4
 
 ## Stack
 <a name="stack"></a>
