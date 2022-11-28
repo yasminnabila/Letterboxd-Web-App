@@ -54,7 +54,7 @@ https://user-images.githubusercontent.com/108170309/204289528-8b3f3990-9e1b-4358
 ### Backend
 * [NodeJS](https://nodejs.org/en/) to run the server
 * [Express JS](https://expressjs.com/) to provide MVC in web app design
-* [Fetch API](https://www.w3schools.com/jsref/api_fetch.asp)to manage HTTP requests and responses
+* [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) to manage HTTP requests and responses
 * [PostgreSQL](https://www.postgresql.org/) server to manage the data fetching declaratively
 * [Heroku](https://herokuapp.com/) to deploy the app 
 
