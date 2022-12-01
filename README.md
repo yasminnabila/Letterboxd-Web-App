@@ -1,4 +1,4 @@
-# Letterboxd Clone (Client and Customer Web App)
+# Letterboxd Clone (Admin and Customer Web App)
 
 This is a web application based on Letterboxd, uses primarly JavaScript both on the frontend and backend. Data about movies and casts are stored on local storage deployed on Heroku. The app is a personal project which also a part of my coding bootcamp assignment, where the aim was to explore and dive deeper into ReactJS. You can find more about the stack <a href="#stack">here</a>.
 
